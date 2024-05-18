@@ -1,11 +1,11 @@
 /* 定义自定义字体 */
 @font-face {
     font-family: 'Andy Bold';
-    src: url('fonts/AndyBold.ttf') format('truetype');
+    src: url('fonts/Andy Bold.ttf') format('truetype');
 }
 
 body {
-    background-color: #6B8E23; /* 深绿色背景 */
+    background-color: #8B0000; /* 深绿色背景 */
     color: #FFFFFF;
     font-family: 'Andy Bold', sans-serif;
     margin: 0;
