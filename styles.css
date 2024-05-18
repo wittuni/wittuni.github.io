@@ -9,7 +9,7 @@
 /* 应用自定义字体到整个页面 */
 body {
     font-family: 'Andy Bold', sans-serif;
-    background-color: #B22222; /* 复古红色背景 */
+    background-color: #F8F7EA; /* 复古红色背景 */
     color: #FFFFFF;
     margin: 0;
     padding: 0;
@@ -56,7 +56,7 @@ section {
 }
 
 .blog-post {
-    background-color: #A52A2A;
+    background-color: #B22222;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
