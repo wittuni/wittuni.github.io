@@ -62,8 +62,8 @@ section {
     border-radius: 10px;
 }
 
-.geometry-decor {
-    background-image: url('geometric-pattern.png'); /* 复古几何图案装饰的占位符 */
+/* .geometry-decor {
+    background-image: url('geometric-pattern.png'); 
     opacity: 0.2;
     position: absolute;
     top: 0;
@@ -72,3 +72,4 @@ section {
     height: 100%;
     z-index: -1;
 }
+ */
