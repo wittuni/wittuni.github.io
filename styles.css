@@ -1,18 +1,19 @@
 /* 定义自定义字体 */
 @font-face {
     font-family: 'Andy Bold';
-    src: url('fonts/Andy Bold.ttf') format('truetype');
+    src: url('Andy Bold.ttf') format('truetype');
+    /* 如果有其他格式的字体文件，如 .woff，可以添加更多 src */
+    /* src: url('fonts/AndyBold.woff') format('woff'); */
 }
 
+/* 应用自定义字体到整个页面 */
 body {
-    background-color: #8B0000; /* 深绿色背景 */
-    color: #FFFFFF;
     font-family: 'Andy Bold', sans-serif;
+    background-color: #B22222; /* 复古红色背景 */
+    color: #FFFFFF;
     margin: 0;
     padding: 0;
     font-size: 16px; /* 根据需要调整字体大小 */
-    position: relative;
-    overflow: hidden;
 }
 
 .container {
@@ -32,7 +33,7 @@ header h1 {
 }
 
 nav {
-    background-color: #556B2F;
+    background-color: #8B0000;
     padding: 10px 0;
     text-align: center;
 }
@@ -49,21 +50,25 @@ section {
 }
 
 .about, .portfolio {
-    background-color: #3A5F0B; /* 更深的绿色背景 */
+    background-color: #800000;
     padding: 20px;
     border-radius: 10px;
 }
 
 .blog-post {
-    background-color: #6B8E23;
+    background-color: #A52A2A;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 10px;
 }
 
-.ripple, .dot {
+.geometry-decor {
+    background-image: url('geometric-pattern.png'); /* 复古几何图案装饰的占位符 */
+    opacity: 0.2;
     position: absolute;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3); /* 白色半透明 */
-    pointer-events: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 }
