@@ -3,12 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <titleBlog 114514</title>
+    <title>My Math Blog</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script type="text/javascript">
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']],
+          displayMath: [['$$', '$$'], ['\\[', '\\]']]
+        },
+        options: {
+          skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+        }
+      };
+    </script>
 </head>
 <body>
     <header>
-        <h1>Blog 114514</h1>
+        <h1>My Math Blog</h1>
     </header>
     <nav>
         <a href="#about">About Me</a>
@@ -18,17 +31,19 @@
     <div class="container">
         <section id="about" class="about">
             <h2>About Me</h2>
-            <p>Welcome to my personal blog! I'm YSXB, a passionate mathematician with a love for sharing the beauty of math with the world. Here, you'll find my thoughts on various mathematical topics, problem-solving strategies, and much more.</p>
+            <p>Welcome to my personal blog! I'm [Your Name], a passionate mathematician with a love for sharing the beauty of math with the world. Here, you'll find my thoughts on various mathematical topics, problem-solving strategies, and much more.</p>
         </section>
         <section id="blog">
             <h2>Blog</h2>
             <div class="blog-post">
                 <h3>Understanding Complex Numbers</h3>
                 <p>Complex numbers are a fundamental part of mathematics, providing a way to solve equations that have no real solutions...</p>
+                <p>Here is an example of a LaTeX formula: \( e^{i\pi} + 1 = 0 \)</p>
             </div>
             <div class="blog-post">
                 <h3>The Beauty of Fractals</h3>
                 <p>Fractals are infinitely complex patterns that are self-similar across different scales. They are created by repeating a simple process over and over in an ongoing feedback loop...</p>
+                <p>Here is an example of a LaTeX formula: \( z_{n+1} = z_n^2 + c \)</p>
             </div>
         </section>
         <section id="portfolio" class="portfolio">
@@ -41,5 +56,6 @@
             </ul>
         </section>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>
