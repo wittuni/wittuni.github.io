@@ -5,10 +5,13 @@
     /* 如果有其他格式的字体文件，如 .woff，可以添加更多 src */
     /* src: url('fonts/AndyBold.woff') format('woff'); */
 }
-
+@font-face {
+    font-family: 'Kai';
+    src: url('custom_chinese_font.ttf') format('truetype');
+}
 /* 应用自定义字体到整个页面 */
 body {
-    font-family: 'Andy Bold', sans-serif;
+    font-family: 'Andy Bold', 'Kai', sans-serif;
     background-color: #FFFFFF; /* 复古红色背景 */
     color: #FFFFFF;
     margin: 0;
