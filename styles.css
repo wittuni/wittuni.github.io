@@ -11,7 +11,7 @@
 /* Base Styles */
 body {
   font-family: 'Andy Bold', 'Kai', sans-serif;
-  background-color: #f9f9f9;
+  background-color: #450808;
   color: #333;
   margin: 0;
   padding: 0;
@@ -38,7 +38,7 @@ header h1 {
 
 /* Navigation */
 nav {
-  background-color: #d32f2f; /* Modern red accent */
+  background-color: #dbd70f;
   padding: 10px 0;
   text-align: center;
 }
