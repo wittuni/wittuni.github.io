@@ -1,6 +1,6 @@
 {
   "title": "tttiw.github.io",
-  "mainText": "<todo>",
+  "mainText": "I don't know what to write here.\nSo I'll just wish you a good day :)",
   "weixin": {
     "title": "Illusory Dept.",
     "description": "My Weixin Official Account. A personal project. Not sure what to post yet.",
@@ -20,8 +20,8 @@
     "description": "A secret project of mine. Details TBA."
   },
   "about_me":{
-    "title": "Me",
-    "description": "todo"
+    "title": "Me!",
+    "description": "'What day is it today?'\n'It's today.'\n'Oh. My favourite day.'"
   },
   "links": {
     "title": "Friendly Links"
@@ -30,6 +30,6 @@
     "title": "Credits"
   },
   "button": "Confetti",
-  "accessibility": "Accessibility",
+  "accessibility": "Accessibility & Customization",
   "download": "Download"
 }
