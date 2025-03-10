@@ -148,9 +148,9 @@ section {
 
   /* 响应式宽度设置 */
   width: 100%; /* 在小屏幕上占满宽度 */
-  max-width: 600px; /* 在大屏幕上限制最大宽度 */
-  margin-left: auto; /* 水平居中 */
-  margin-right: auto; /* 水平居中 */
+  max-width: 300px; /* 在大屏幕上限制最大宽度 */
+  /*margin-left: auto; !* 水平居中 *!*/
+  /*margin-right: auto; !* 水平居中 *!*/
   box-sizing: border-box; /* 确保padding不会增加元素总宽度 */
 }
 
@@ -158,15 +158,8 @@ section {
 @media (max-width: 768px) {
   .accessibility-section {
     padding: 15px 20px; /* 在小屏幕上减少内边距 */
-    border-radius: 8px; /* 可选：在小屏幕上减小圆角 */
   }
 }
-
-.container .accessibility-section {
-  width: fit-content;
-  display: inline-block; /* 使元素宽度不超过内容宽度 */
-}
-
 
 /* ==========================================================================
    6. 语言选择器
