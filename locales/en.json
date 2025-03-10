@@ -29,7 +29,7 @@
   "credits": {
     "title": "Credits"
   },
-  "button": "Confetti",
+  "confetti": "Confetti",
   "accessibility": "Accessibility & Customization",
   "download": "Download"
 }
