@@ -1,14 +1,18 @@
-/* Custom Fonts */
+/* ==========================================================================
+   1. 字体定义
+   ========================================================================== */
 @font-face {
   font-family: 'Andy Bold';
   src: url('Andy Bold.ttf') format('truetype');
 }
-@font-face {
-  font-family: 'Kai';
-  src: url('custom_chinese_font.ttf') format('truetype');
-}
+/*@font-face {*/
+/*  font-family: 'Kai';*/
+/*  src: url('custom_chinese_font.ttf') format('truetype');*/
+/*}*/
 
-/* Base Styles */
+/* ==========================================================================
+   2. 基础样式
+   ========================================================================== */
 body {
   font-family: 'Andy Bold', 'Kai', sans-serif;
   background-color: #450808;
@@ -24,7 +28,10 @@ body {
   padding: 20px;
 }
 
-/* Header */
+/* ==========================================================================
+   3. 布局组件
+   ========================================================================== */
+/* 3.1 头部区域 */
 header {
   text-align: center;
   padding: 50px 0;
@@ -36,7 +43,7 @@ header h1 {
   color: #222;
 }
 
-/* Navigation */
+/* 3.2 导航栏 */
 nav {
   background-color: #dbd70f;
   padding: 10px 0;
@@ -50,22 +57,28 @@ nav a {
   font-weight: bold;
 }
 
-/* Sections */
+/* 3.3 内容区块 */
 section {
   margin: 20px 0;
 }
 
-/* Modern Card UI */
+/* ==========================================================================
+   4. 卡片组件
+   ========================================================================== */
+/* 4.1 基础卡片样式 */
 .card {
+
+  position: relative;
   background-color: #fff;
   padding: 20px;
+  padding-bottom: 50px;
   margin-bottom: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Apply Card Style to Specific Sections */
+/* 4.2 特殊卡片样式 */
 .about,
 .portfolio,
 .blog-post {
@@ -78,7 +91,7 @@ section {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Hover Effects */
+/* 4.3 卡片悬停效果 */
 .card:hover,
 .about:hover,
 .portfolio:hover,
@@ -87,6 +100,7 @@ section {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
+/* 4.4 卡片网格布局 */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -94,6 +108,16 @@ section {
   margin-top: 40px;
 }
 
+/* 4.5 英雄卡片 */
+.hero-card {
+  position: relative;
+  padding-bottom: 70px; /* 增加底部内边距，为按钮留出空间 */
+}
+
+/* ==========================================================================
+   5. 无障碍功能区
+   ========================================================================== */
+/* 5.1 无障碍标题 */
 .accessibility-title {
   display: flex;
   align-items: center;
@@ -108,6 +132,34 @@ section {
   fill: #495057;
 }
 
+/* 5.2 无障碍区块 */
+.accessibility-section {
+  display: flex;
+  flex-direction: column;
+  background-color: #f8f9fa;
+  padding: 20px 30px;
+  border-radius: 12px;
+  margin-top: 20px;
+  margin-bottom: 20px; /* 确保与按钮有足够间距 */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  border: 1px solid #e9ecef;
+
+  width: 80%;
+  max-width: 800px; /* 设置最大宽度，防止在大屏幕上过宽 */
+  min-width: 300px; /* 设置最小宽度，确保小屏幕有足够空间 */
+  box-sizing: border-box;
+
+}
+
+.container .accessibility-section {
+  width: fit-content;
+  display: inline-block; /* 使元素宽度不超过内容宽度 */
+}
+
+
+/* ==========================================================================
+   6. 语言选择器
+   ========================================================================== */
 .language-selector-wrapper {
   position: relative;
   width: 100%;
@@ -147,31 +199,13 @@ section {
   pointer-events: none;
 }
 
-/* 当选择器获得焦点时改变箭头颜色 */
 .language-selector:focus + .select-arrow {
   border-top-color: #0d6efd;
 }
 
-/* 为.hero-card添加足够的底部内边距，给按钮腾出空间 */
-.hero-card {
-  position: relative;
-  padding-bottom: 70px; /* 增加底部内边距，为按钮留出空间 */
-}
-
-/* 将accessibility-section上移，避免和按钮重叠 */
-.accessibility-section {
-  display: flex;
-  flex-direction: column;
-  background-color: #f8f9fa;
-  padding: 16px;
-  border-radius: 12px;
-  margin-top: 20px;
-  margin-bottom: 20px; /* 确保与按钮有足够间距 */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-  border: 1px solid #e9ecef;
-}
-
-/* 按钮定位保持不变 */
+/* ==========================================================================
+   7. 交互按钮
+   ========================================================================== */
 .action-button {
   position: absolute;
   bottom: 20px;
@@ -192,5 +226,332 @@ section {
   transition: transform 0.1s;
 }
 
+.action-button.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* 图片容器样式 */
+.glass-image-container {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+/* 卡片图片基础样式 */
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+/* 毛玻璃效果覆盖层 */
+.glass-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 6px;
+}
+
+/* 悬停效果 */
+.card:hover .card-image {
+  transform: scale(1.05);
+}
+
+.card:hover .glass-overlay {
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+}
+
+/*card 2*/
+/* 毛玻璃背景卡片基础样式 */
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  padding: 0; /* 移除原有内边距，由内容区域提供 */
+}
+
+/* 背景图片层 */
+.glass-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+  filter: blur(2px); /* 轻微模糊背景图片 */
+  transform: scale(1.05); /* 稍微放大以避免边缘出现空白 */
+
+  transition: all 0.5s ease;
+
+}
+
+/* 毛玻璃效果内容区域 */
+.glass-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.2); /* 半透明白色背景 */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 20px;
+  height: 100%;
+  box-sizing: border-box;
+  color: #000; /* 黑色文本，便于阅读 */
+
+  transition: all 0.5s ease;
+
+}
+
+/* 加深文字阅读性 */
+.glass-card h3 {
+  margin-top: 0;
+  color: #111;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+}
+
+.glass-card p {
+  color: #222;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
+}
+
+/* 卡片悬停效果 */
+.glass-card:hover .glass-background {
+  transform: scale(1.1);
+  transition: transform 0.5s ease;
+}
+
+.glass-card:hover .glass-content {
+  background: rgba(255, 255, 255, 0.3); /* 悬停时略微增加透明度 */
+}
+
+/* 长方形图片卡片 */
+.image-card {
+  position: relative;
+  width: 100%;
+  height: 320px; /* 卡片高度 */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  box-sizing: border-box;
+}
+
+/* 图片背景 */
+.card-img-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+
+/* 底部白色信息卡 */
+.info-box {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  width: calc(100% - 40px); /* 计算宽度减去左右边距 */
+  box-sizing: border-box; /* 确保内边距和边框不会增加元素的总宽度 */
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+  border-radius: 8px;
+  z-index: 2;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding-bottom: 40px; /* 为标签腾出空间 */
+}
 
 
+
+.info-box h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #333;
+  font-size: 18px;
+}
+
+.info-box p {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* 悬停效果 */
+.image-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.image-card:hover .card-img-background {
+  transform: scale(1.05);
+}
+
+.image-card {
+  position: relative;
+}
+
+/* 标签容器 */
+.tags-container {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  z-index: 5; /* 确保标签显示在最上层 */
+}
+
+/* 标签样式 */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.7);
+  transition: all 0.2s ease;
+}
+
+/* 不同标签类型 */
+.tag-python {
+  background-color: rgba(75, 181, 67, 0.3); /* 透明绿色 */
+}
+
+.tag-javascript {
+  background-color: rgba(240, 219, 79, 0.3); /* 透明 JS 黄色 */
+}
+
+.tag-data {
+  background-color: rgba(0, 191, 255, 0.2); /* 透明蓝色 */
+}
+
+.tag-web {
+  background-color: rgba(255, 99, 71, 0.2); /* 透明红橙色 */
+}
+
+.tag-design {
+  background-color: rgba(147, 112, 219, 0.2); /* 透明紫色 */
+}
+
+.tag-java {
+  background-color: rgba(169, 169, 169, 0.3); /* 透明灰色 */
+}
+
+/* 为每种标签设计特定的悬停效果 */
+.tag-python:hover {
+  background-color: rgba(75, 181, 67, 0.5); /* 更深的绿色 */
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+
+.tag-javascript:hover {
+  background-color: rgba(240, 219, 79, 0.5); /* 更深的JS黄色 */
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+
+.tag-data:hover {
+  background-color: rgba(0, 191, 255, 0.4); /* 更深的蓝色 */
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+
+.tag-web:hover {
+  background-color: rgba(255, 99, 71, 0.4); /* 更深的红橙色 */
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+
+.tag-design:hover {
+  background-color: rgba(147, 112, 219, 0.4); /* 更深的紫色 */
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+
+.tag-java:hover {
+  background-color: rgba(169, 169, 169, 0.5); /* 更深的灰色 */
+  transform: translateY(-1px);
+  cursor: pointer;
+}
+
+/* 如果卡片在网格布局中，确保它们高度一致 */
+@media (min-width: 768px) {
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .card-grid > * {
+    height: auto; /* 让内容决定高度 */
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+/* 颜色主题选择器 */
+.color-theme-selector {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.color-button {
+  width: 25px;
+  height: 25px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.color-button:hover {
+  transform: scale(1.1);
+}
+
+.color-button.active {
+  border-color: #ffffff;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+/* 预定义的颜色按钮 */
+.color-button-red {
+  background-color: #450808; /* 当前使用的深红色 */
+}
+
+.color-button-blue {
+  background-color: #082045;
+}
+
+.color-button-green {
+  background-color: #084520;
+}
+
+.color-button-purple {
+  background-color: #2d0845;
+}
+
+.color-button-dark {
+  background-color: #1a1a1a;
+}

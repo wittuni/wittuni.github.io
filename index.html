@@ -3,121 +3,220 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Placeholder Layout</title>
+  <title data-i18n="pageTitle">tttiw's github.io</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
-  <div class="container">
-    <!-- Main Card -->
-    <div class="card hero-card">
+<div class="container">
+  <!-- Main Card -->
+  <div class="card hero-card">
 
-      <button
-              type="button"
-              class="action-button"
-              tabindex="0">
-        Click Me
-      </button>
+    <button
+            type="button"
+            class="action-button"
+            tabindex="0"
+            data-i18n="button">
+      Confetti Button
+    </button>
 
-      <script>
-        document.querySelector('.action-button').addEventListener('click', function() {
-          // 从页面顶部撒下彩色confetti
-          var duration = 2000; // 持续2秒
-          var end = Date.now() + duration;
+    <script>
+      document.querySelector('.action-button').addEventListener('click', function() {
+        // 如果按钮已被禁用，则不执行任何操作
+        if (this.disabled) return;
 
-          // 创建多彩confetti的函数
-          function frame() {
-            // 在页面宽度范围内随机发射confetti
-            confetti({
-              particleCount: 7, // 每次发射的数量
-              angle: 60, // 左侧斜向下
-              spread: 55,
-              origin: { x: 0 }, // 页面最左边
-              y: 0,  // 页面最上方
-              gravity: 2.5, // 增加重力，使烟花更快落下
-              scalar: 0.7, // 缩小烟花大小
-              drift: 0, // 减少水平漂移
-              ticks: 150, // 减少生命周期，使烟花在中部消失
-              colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'], // Instagram风格的颜色
-            });
+        // 禁用按钮，防止连续点击
+        this.disabled = true;
 
-            confetti({
-              particleCount: 7, // 每次发射的数量
-              angle: 120, // 右侧斜向下
-              spread: 55,
-              origin: { x: 1 }, // 页面最右边
-              y: 0,  // 页面最上方
-              gravity: 2.5, // 增加重力
-              scalar: 0.7, // 缩小烟花大小
-              drift: 0, // 减少水平漂移
-              ticks: 150, // 减少生命周期
-              colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'], // Instagram风格的颜色
-            });
+        // 可以添加视觉反馈，表明按钮被禁用
+        this.classList.add('disabled');
 
-            // 中间向下发射
-            confetti({
-              particleCount: 10, // 每次发射的数量
-              angle: 90, // 垂直向下
-              spread: 60,
-              origin: { x: 0.5 }, // 页面中间
-              y: 0,  // 页面最上方
-              gravity: 2.5, // 增加重力
-              scalar: 0.7, // 缩小烟花大小
-              drift: 0, // 减少水平漂移
-              ticks: 150, // 减少生命周期
-              colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'], // Instagram风格的颜色
-            });
+        var duration = 2000; // 烟花持续2秒
+        var end = Date.now() + duration;
 
-            // 如果时间未到，继续执行
-            if (Date.now() < end) {
-              requestAnimationFrame(frame);
-            }
+        // 创建多彩confetti的函数
+        function frame() {
+          // 在页面宽度范围内随机发射confetti
+          confetti({
+            particleCount: 7, // 每次发射的数量
+            angle: 60, // 左侧斜向下
+            spread: 55,
+            origin: { x: 0 }, // 页面最左边
+            y: 0,  // 页面最上方
+            gravity: 2.5,
+            scalar: 0.7,
+            drift: 0,
+            ticks: 150,
+            colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
+          });
+
+          // 其他烟花代码保持不变
+          confetti({
+            particleCount: 7,
+            angle: 120,
+            spread: 55,
+            origin: { x: 1 },
+            y: 0,
+            gravity: 2.5,
+            scalar: 0.7,
+            drift: 0,
+            ticks: 150,
+            colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
+          });
+
+          confetti({
+            particleCount: 10,
+            angle: 90,
+            spread: 60,
+            origin: { x: 0.5 },
+            y: 0,
+            gravity: 2.5,
+            scalar: 0.7,
+            drift: 0,
+            ticks: 150,
+            colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
+          });
+
+          // 如果时间未到，继续执行
+          if (Date.now() < end) {
+            requestAnimationFrame(frame);
+          } else {
+            // 烟花结束后，延迟一段时间再允许点击
+            setTimeout(function() {
+              button.disabled = false;
+              button.classList.remove('disabled');
+            }, 500); // 额外增加500ms冷却时间
           }
+        }
 
-          // 开始动画
-          frame();
-        });
-      </script>
+        // 保存按钮引用
+        const button = this;
 
-      <h2>Placeholder Title</h2>
-      <p>PH</p>
+        // 开始动画
+        frame();
+      });
+    </script>
 
-      <!-- Accessibility Section -->
-      <div class="accessibility-section">
-        <p>Accessibility</p>
-        <div class="language-selector-wrapper">
-          <label>
-            <select id="language-selector"
-                    class="language-selector">
-              <option value="en">English</option>
-              <option value="zh">中文</option>
-            </select>
-          </label>
-          <div class="select-arrow"></div>
+    <h2 data-i18n="title">Placeholder Title</h2>
+    <p data-i18n="mainText">PH</p>
+
+    <!-- Accessibility Section -->
+    <div class="accessibility-section">
+      <p data-i18n="accessibility">Accessibility</p>
+      <div class="language-selector-wrapper">
+        <label>
+          <select id="language-selector"
+                  class="language-selector">
+            <option value="en" data-i18n="languages.english">English</option>
+            <option value="zh" data-i18n="languages.chinese">现代汉语</option>
+          </select>
+        </label>
+        <div class="select-arrow"></div>
+      </div>
+
+      <!-- 添加颜色选择器按钮 -->
+      <div class="color-theme-selector">
+        <button class="color-button color-button-red" data-color="#450808" aria-label="深红色主题"></button>
+        <button class="color-button color-button-blue" data-color="#082045" aria-label="深蓝色主题"></button>
+        <button class="color-button color-button-green" data-color="#084520" aria-label="深绿色主题"></button>
+        <button class="color-button color-button-purple" data-color="#2d0845" aria-label="深紫色主题"></button>
+        <button class="color-button color-button-dark" data-color="#1a1a1a" aria-label="暗黑主题"></button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="card-grid">
+
+    <div class="card">
+      <div class="glass-image-container">
+        <img src="images/witt-s-calculator.jpg" class="card-image">
+        <div class="glass-overlay"></div>
+      </div>
+      <h3 data-i18n="card1.title">Placeholder Card 1</h3>
+      <p data-i18n="card1.description">Brief description or content goes here.</p>
+
+      <div class="tags-container">
+        <span class="tag tag-python">Python</span>
+        <span class="tag tag-data">数据分析</span>
+      </div>
+
+    </div>
+
+    <div class="card image-card">
+      <!-- 图片背景层 -->
+      <div class="card-img-background" style="background-image: url('images/witt-s-calculator.jpg');"></div>
+
+      <!-- 毛玻璃效果层（可选） -->
+      <div class="glass-overlay"></div>
+
+      <!-- 底部白色信息卡 -->
+      <div class="info-box">
+        <h3 data-i18n="card2.title">Placeholder Card 2</h3>
+        <p data-i18n="card2.description">Brief description or content goes here.</p>
+
+        <div class="tags-container">
+          <span class="tag tag-javascript">JavaScript</span>
+          <span class="tag tag-web">前端</span>
         </div>
 
       </div>
     </div>
 
-    <div class="card-grid">
-      <div class="card">
-        <h3 data-i18n="card1.title">Placeholder Card 1</h3>
-        <p data-i18n="card1.description">Brief description or content goes here.</p>
-      </div>
-      <div class="card">
-        <h3 data-i18n="card2.title">Placeholder Card 2</h3>
-        <p data-i18n="card2.description">Brief description or content goes here.</p>
-      </div>
-      <div class="card">
-        <h3 data-i18n="card3.title">Placeholder Card 3</h3>
-        <p data-i18n="card3.description">Brief description or content goes here.</p>
-      </div>
+    <div class="card">
+      <h3 data-i18n="card3.title">Placeholder Card 3</h3>
+      <p data-i18n="card3.description">Brief description or content goes here.</p>
     </div>
-  </div>
 
-  <!-- 引入本地化脚本 -->
-  <script src="js/i18n.js"></script>
+  </div>
+</div>
+
+<!-- 引入本地化脚本 -->
+<script src="js/i18n.js"></script>
+
+<script>
+  // 颜色主题切换功能
+  document.addEventListener('DOMContentLoaded', function() {
+    const colorButtons = document.querySelectorAll('.color-button');
+    const redButton = document.querySelector('.color-button-red');
+
+    // 默认激活红色按钮
+    redButton.classList.add('active');
+
+    // 为每个颜色按钮添加点击事件
+    colorButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        // 移除所有按钮的active类
+        colorButtons.forEach(btn => btn.classList.remove('active'));
+
+        // 为当前点击的按钮添加active类
+        this.classList.add('active');
+
+        // 获取颜色值并更改背景
+        const color = this.getAttribute('data-color');
+        document.body.style.backgroundColor = color;
+
+        // 可选：保存用户选择到localStorage
+        localStorage.setItem('preferredTheme', color);
+      });
+    });
+
+    // 从localStorage加载用户之前的颜色选择（如果有）
+    const savedTheme = localStorage.getItem('preferredTheme');
+    if (savedTheme) {
+      document.body.style.backgroundColor = savedTheme;
+
+      // 找到对应颜色的按钮并激活它
+      colorButtons.forEach(btn => {
+        if (btn.getAttribute('data-color') === savedTheme) {
+          colorButtons.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        }
+      });
+    }
+  });
+</script>
 
 </body>
 </html>
