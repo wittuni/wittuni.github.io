@@ -1,0 +1,18 @@
+{
+  "title": "Placeholder Title",
+  "mainText": "Brief description or content goes here.",
+  "card1": {
+    "title": "Placeholder Card 1",
+    "description": "Brief description or content goes here."
+  },
+  "card2": {
+    "title": "Placeholder Card 2",
+    "description": "Brief description or content goes here."
+  },
+  "card3": {
+    "title": "Placeholder Card 3",
+    "description": "Brief description or content goes here."
+  },
+  "button": "Click Me",
+  "accessibility": "Accessibility"
+}

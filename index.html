@@ -5,30 +5,118 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Placeholder Layout</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
+
 <body>
   <div class="container">
     <!-- Main Card -->
     <div class="card hero-card">
+
+      <button
+              type="button"
+              class="action-button"
+              tabindex="0">
+        Click Me
+      </button>
+
+      <script>
+        document.querySelector('.action-button').addEventListener('click', function() {
+          // 从页面顶部撒下彩色confetti
+          var duration = 2000; // 持续2秒
+          var end = Date.now() + duration;
+
+          // 创建多彩confetti的函数
+          function frame() {
+            // 在页面宽度范围内随机发射confetti
+            confetti({
+              particleCount: 7, // 每次发射的数量
+              angle: 60, // 左侧斜向下
+              spread: 55,
+              origin: { x: 0 }, // 页面最左边
+              y: 0,  // 页面最上方
+              gravity: 2.5, // 增加重力，使烟花更快落下
+              scalar: 0.7, // 缩小烟花大小
+              drift: 0, // 减少水平漂移
+              ticks: 150, // 减少生命周期，使烟花在中部消失
+              colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'], // Instagram风格的颜色
+            });
+
+            confetti({
+              particleCount: 7, // 每次发射的数量
+              angle: 120, // 右侧斜向下
+              spread: 55,
+              origin: { x: 1 }, // 页面最右边
+              y: 0,  // 页面最上方
+              gravity: 2.5, // 增加重力
+              scalar: 0.7, // 缩小烟花大小
+              drift: 0, // 减少水平漂移
+              ticks: 150, // 减少生命周期
+              colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'], // Instagram风格的颜色
+            });
+
+            // 中间向下发射
+            confetti({
+              particleCount: 10, // 每次发射的数量
+              angle: 90, // 垂直向下
+              spread: 60,
+              origin: { x: 0.5 }, // 页面中间
+              y: 0,  // 页面最上方
+              gravity: 2.5, // 增加重力
+              scalar: 0.7, // 缩小烟花大小
+              drift: 0, // 减少水平漂移
+              ticks: 150, // 减少生命周期
+              colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'], // Instagram风格的颜色
+            });
+
+            // 如果时间未到，继续执行
+            if (Date.now() < end) {
+              requestAnimationFrame(frame);
+            }
+          }
+
+          // 开始动画
+          frame();
+        });
+      </script>
+
       <h2>Placeholder Title</h2>
       <p>PH</p>
+
+      <!-- Accessibility Section -->
+      <div class="accessibility-section">
+        <p>Accessibility</p>
+        <div class="language-selector-wrapper">
+          <label>
+            <select class="language-selector">
+              <option value="en">English</option>
+              <option value="zh">中文</option>
+            </select>
+          </label>
+          <div class="select-arrow"></div>
+        </div>
+
+      </div>
     </div>
-    
-    <!-- Grid of Small Cards -->
+
     <div class="card-grid">
       <div class="card">
-        <h3>Placeholder Card 1</h3>
-        <p>Brief description or content goes here.</p>
+        <h3 data-i18n="card1.title">Placeholder Card 1</h3>
+        <p data-i18n="card1.description">Brief description or content goes here.</p>
       </div>
       <div class="card">
-        <h3>Placeholder Card 2</h3>
-        <p>Brief description or content goes here.</p>
+        <h3 data-i18n="card2.title">Placeholder Card 2</h3>
+        <p data-i18n="card2.description">Brief description or content goes here.</p>
       </div>
       <div class="card">
-        <h3>Placeholder Card 3</h3>
-        <p>Brief description or content goes here.</p>
+        <h3 data-i18n="card3.title">Placeholder Card 3</h3>
+        <p data-i18n="card3.description">Brief description or content goes here.</p>
       </div>
     </div>
   </div>
+
+  <!-- 引入本地化脚本 -->
+  <script src="js/i18n.js"></script>
+
 </body>
 </html>
