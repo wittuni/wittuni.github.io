@@ -1,18 +1,28 @@
 {
-  "title": "Placeholder Title",
+  "title": "tttiw.github.io",
   "mainText": "Brief description or content goes here.",
-  "card1": {
-    "title": "Placeholder Card 1",
-    "description": "Brief description or content goes here."
+  "weixin": {
+    "title": "Illusory Dept.",
+    "description": "My Weixin Official Account. A personal project. Not sure what to post yet.",
+    "hyperlink": "goto"
   },
-  "card2": {
-    "title": "Placeholder Card 2",
-    "description": "Brief description or content goes here."
+  "ws_calc": {
+    "title": "witt's Calculator (Beta)",
+    "description": "A minimalism calculator. Supports sympy and LaTeX syntax."
   },
-  "card3": {
-    "title": "Placeholder Card 3",
-    "description": "Brief description or content goes here."
+  "updates": {
+    "title": "Upcoming Updates",
+    "description": "witt's Calculator:\n- Beta 2.0 \n  - Custom UI schemes and localizations\n  - De-experiment LaTeX mode\n  - Truth table (By Mitchell Xu) integration\n- Beta 3.0\n  - Highlighting\n  - Typeset display"
+
   },
-  "button": "Click Me",
-  "accessibility": "Accessibility"
+  "game": {
+    "title": "A RPG",
+    "description": "A secret project of mine. Details TBA."
+  },
+  "links": {
+    "title": "Friendly Links"
+  },
+  "button": "Confetti",
+  "accessibility": "Accessibility",
+  "download": "Download"
 }

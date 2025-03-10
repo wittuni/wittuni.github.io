@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="pageTitle">tttiw's github.io</title>
+  <title data-i18n="pageTitle">tttiw.github.io</title>
   <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
@@ -12,7 +12,6 @@
 <div class="container">
   <!-- Main Card -->
   <div class="card hero-card">
-
     <button
             type="button"
             class="action-button"
@@ -23,19 +22,13 @@
 
     <script>
       document.querySelector('.action-button').addEventListener('click', function() {
-        // 如果按钮已被禁用，则不执行任何操作
         if (this.disabled) return;
-
-        // 禁用按钮，防止连续点击
         this.disabled = true;
-
-        // 可以添加视觉反馈，表明按钮被禁用
         this.classList.add('disabled');
 
-        var duration = 2000; // 烟花持续2秒
+        var duration = 2000;
         var end = Date.now() + duration;
 
-        // 创建多彩confetti的函数
         function frame() {
           // 在页面宽度范围内随机发射confetti
           confetti({
@@ -51,7 +44,6 @@
             colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
           });
 
-          // 其他烟花代码保持不变
           confetti({
             particleCount: 7,
             angle: 120,
@@ -65,35 +57,31 @@
             colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
           });
 
-          confetti({
-            particleCount: 10,
-            angle: 90,
-            spread: 60,
-            origin: { x: 0.5 },
-            y: 0,
-            gravity: 2.5,
-            scalar: 0.7,
-            drift: 0,
-            ticks: 150,
-            colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
-          });
+          // confetti({
+          //   particleCount: 10,
+          //   angle: 90,
+          //   spread: 60,
+          //   origin: { x: 0.5 },
+          //   y: 0,
+          //   gravity: 2.5,
+          //   scalar: 0.7,
+          //   drift: 0,
+          //   ticks: 150,
+          //   colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
+          // });
 
           // 如果时间未到，继续执行
           if (Date.now() < end) {
             requestAnimationFrame(frame);
           } else {
-            // 烟花结束后，延迟一段时间再允许点击
             setTimeout(function() {
               button.disabled = false;
               button.classList.remove('disabled');
-            }, 500); // 额外增加500ms冷却时间
+            }, 500); // 500ms冷却时间
           }
         }
 
-        // 保存按钮引用
         const button = this;
-
-        // 开始动画
         frame();
       });
     </script>
@@ -115,13 +103,13 @@
         <div class="select-arrow"></div>
       </div>
 
-      <!-- 添加颜色选择器按钮 -->
+      <!-- 颜色选择器按钮 -->
       <div class="color-theme-selector">
-        <button class="color-button color-button-red" data-color="#450808" aria-label="深红色主题"></button>
-        <button class="color-button color-button-blue" data-color="#082045" aria-label="深蓝色主题"></button>
-        <button class="color-button color-button-green" data-color="#084520" aria-label="深绿色主题"></button>
-        <button class="color-button color-button-purple" data-color="#2d0845" aria-label="深紫色主题"></button>
-        <button class="color-button color-button-dark" data-color="#1a1a1a" aria-label="暗黑主题"></button>
+        <button class="color-button color-button-red" data-color="#4b2328"></button>
+        <button class="color-button color-button-yellow" data-color="#a86800"></button>
+        <button class="color-button color-button-green" data-color="#395a57"></button>
+        <button class="color-button color-button-lavender" data-color="#4e4466"></button>
+        <button class="color-button color-button-dark" data-color="#1a1a1a"></button>
       </div>
 
     </div>
@@ -130,17 +118,19 @@
   <div class="card-grid">
 
     <div class="card">
-      <div class="glass-image-container">
-        <img src="images/witt-s-calculator.jpg" class="card-image">
-        <div class="glass-overlay"></div>
-      </div>
-      <h3 data-i18n="card1.title">Placeholder Card 1</h3>
-      <p data-i18n="card1.description">Brief description or content goes here.</p>
+<!--      <div class="glass-image-container">-->
+<!--        <img src="images/witt-s-calculator.jpg" class="card-image">-->
+<!--        <div class="glass-overlay"></div>-->
+<!--      </div>-->
+        <div class="glass-image-container gradient-bg">
+        </div>
+      <h3 data-i18n="weixin.title"></h3>
+        <p data-i18n="weixin.description"></p>
+        <a href="https://mp.weixin.qq.com/s/b6wxfJ-ndgf0hpJa0fnrGQ" class="button-link" data-i18n="weixin.hyperlink"></a>
 
-      <div class="tags-container">
-        <span class="tag tag-python">Python</span>
-        <span class="tag tag-data">数据分析</span>
-      </div>
+        <div class="tags-container">
+          <span class="tag tag-grey">Personal Project</span>
+        </div>
 
     </div>
 
@@ -153,23 +143,37 @@
 
       <!-- 底部白色信息卡 -->
       <div class="info-box">
-        <h3 data-i18n="card2.title">Placeholder Card 2</h3>
-        <p data-i18n="card2.description">Brief description or content goes here.</p>
+        <h3 data-i18n="ws_calc.title"></h3>
+        <p data-i18n="ws_calc.description"></p>
+
+        <a href="https://github.com/tttiw/witt-s-calculator/releases/tag/Beta-1.0" class="button-link" data-i18n="download"></a>
 
         <div class="tags-container">
-          <span class="tag tag-javascript">JavaScript</span>
-          <span class="tag tag-web">前端</span>
+          <span class="tag tag-green">Python</span>
+          <span class="tag tag-red">Apache 2.0</span>
+          <span class="tag tag-blue">Beta</span>
         </div>
 
       </div>
     </div>
 
     <div class="card">
-      <h3 data-i18n="card3.title">Placeholder Card 3</h3>
-      <p >Brief description or content goes here.
-        <span class="code-inline">example()</span>
+      <h3 data-i18n="updates.title"></h3>
+      <p data-i18n="updates.description"></p>
+    </div>
 
-      </p>
+    <div class="card">
+      <h3 data-i18n="game.title"></h3>
+      <p data-i18n="game.description"></p>
+      <div class="tags-container">
+        <span class="tag tag-yellow">C#</span>
+        <span class="tag tag-grey">TBA</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3 data-i18n="links.title"></h3>
+      <p >Brief description or content goes here.<span class="code-inline">example()</span></p>
     </div>
 
   </div>
