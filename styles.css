@@ -143,15 +143,23 @@ section {
   padding: 20px 30px;
   border-radius: 12px;
   margin-top: 20px;
-  /*margin-bottom: 20px; !* 确保与按钮有足够间距 *!*/
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
   border: 1px solid #e9ecef;
 
-  width: 80%;
-  /*max-width: 800px; !* 设置最大宽度，防止在大屏幕上过宽 *!*/
-  /*min-width: 300px; !* 设置最小宽度，确保小屏幕有足够空间 *!*/
-  /*box-sizing: border-box;*/
+  /* 响应式宽度设置 */
+  width: 100%; /* 在小屏幕上占满宽度 */
+  max-width: 600px; /* 在大屏幕上限制最大宽度 */
+  margin-left: auto; /* 水平居中 */
+  margin-right: auto; /* 水平居中 */
+  box-sizing: border-box; /* 确保padding不会增加元素总宽度 */
+}
 
+/* 添加媒体查询，在小屏幕上调整padding */
+@media (max-width: 768px) {
+  .accessibility-section {
+    padding: 15px 20px; /* 在小屏幕上减少内边距 */
+    border-radius: 8px; /* 可选：在小屏幕上减小圆角 */
+  }
 }
 
 .container .accessibility-section {
