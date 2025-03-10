@@ -1,0 +1,73 @@
+
+@font-face {
+    font-family: 'Andy Bold';
+    src: url('Andy Bold.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Andy Bold', 'Kai', sans-serif;
+    background-color: #1a1a1a;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    font-size: 22px;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    padding: 50px 0;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+    color: #ffffff;
+}
+
+nav {
+    background-color: #8B0000;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: #FFFFFF;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    margin: 20px 0;
+}
+
+.about, .portfolio {
+    background-color: #800000;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.blog-post {
+    background-color: #B22222;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+/* .geometry-decor {
+    background-image: url('geometric-pattern.png');
+    opacity: 0.2;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+ */

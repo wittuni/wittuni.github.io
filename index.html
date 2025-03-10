@@ -1,229 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title data-i18n="pageTitle">tttiw.github.io</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="pageTitle">tttiw.github.io</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 </head>
 
 <body>
 <div class="container">
-  <!-- Main Card -->
-  <div class="card hero-card">
-    <button
-            type="button"
-            class="action-button"
-            tabindex="0"
-            data-i18n="button">
-      Confetti Button
-    </button>
+    <!-- Main Card -->
+    <div class="card hero-card">
+        <button
+                type="button"
+                class="action-button"
+                tabindex="0"
+                data-i18n="button">
+            Confetti Button
+        </button>
 
-    <script>
-      document.querySelector('.action-button').addEventListener('click', function() {
-        if (this.disabled) return;
-        this.disabled = true;
-        this.classList.add('disabled');
+        <script>
+            document.querySelector('.action-button').addEventListener('click', function () {
+                if (this.disabled) return;
+                this.disabled = true;
+                this.classList.add('disabled');
 
-        var duration = 2000;
-        var end = Date.now() + duration;
+                var duration = 2000;
+                var end = Date.now() + duration;
 
-        function frame() {
-          // 在页面宽度范围内随机发射confetti
-          confetti({
-            particleCount: 7, // 每次发射的数量
-            angle: 60, // 左侧斜向下
-            spread: 55,
-            origin: { x: 0 }, // 页面最左边
-            y: 0,  // 页面最上方
-            gravity: 2.5,
-            scalar: 0.7,
-            drift: 0,
-            ticks: 150,
-            colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
-          });
+                function frame() {
+                    // 在页面宽度范围内随机发射confetti
+                    confetti({
+                        particleCount: 7, // 每次发射的数量
+                        angle: 60, // 左侧斜向下
+                        spread: 55,
+                        origin: {x: 0}, // 页面最左边
+                        y: 0,  // 页面最上方
+                        gravity: 2.5,
+                        scalar: 0.7,
+                        drift: 0,
+                        ticks: 150,
+                        colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
+                    });
 
-          confetti({
-            particleCount: 7,
-            angle: 120,
-            spread: 55,
-            origin: { x: 1 },
-            y: 0,
-            gravity: 2.5,
-            scalar: 0.7,
-            drift: 0,
-            ticks: 150,
-            colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
-          });
+                    confetti({
+                        particleCount: 7,
+                        angle: 120,
+                        spread: 55,
+                        origin: {x: 1},
+                        y: 0,
+                        gravity: 2.5,
+                        scalar: 0.7,
+                        drift: 0,
+                        ticks: 150,
+                        colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
+                    });
 
-          // confetti({
-          //   particleCount: 10,
-          //   angle: 90,
-          //   spread: 60,
-          //   origin: { x: 0.5 },
-          //   y: 0,
-          //   gravity: 2.5,
-          //   scalar: 0.7,
-          //   drift: 0,
-          //   ticks: 150,
-          //   colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
-          // });
+                    // confetti({
+                    //   particleCount: 10,
+                    //   angle: 90,
+                    //   spread: 60,
+                    //   origin: { x: 0.5 },
+                    //   y: 0,
+                    //   gravity: 2.5,
+                    //   scalar: 0.7,
+                    //   drift: 0,
+                    //   ticks: 150,
+                    //   colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
+                    // });
 
-          // 如果时间未到，继续执行
-          if (Date.now() < end) {
-            requestAnimationFrame(frame);
-          } else {
-            setTimeout(function() {
-              button.disabled = false;
-              button.classList.remove('disabled');
-            }, 500); // 500ms冷却时间
-          }
-        }
+                    // 如果时间未到，继续执行
+                    if (Date.now() < end) {
+                        requestAnimationFrame(frame);
+                    } else {
+                        setTimeout(function () {
+                            button.disabled = false;
+                            button.classList.remove('disabled');
+                        }, 500); // 500ms冷却时间
+                    }
+                }
 
-        const button = this;
-        frame();
-      });
-    </script>
+                const button = this;
+                frame();
+            });
+        </script>
 
-    <h2 data-i18n="title">Placeholder Title</h2>
-    <p data-i18n="mainText">PH</p>
+        <h2 data-i18n="title">Placeholder Title</h2>
+        <p data-i18n="mainText">PH</p>
 
-    <!-- Accessibility Section -->
-    <div class="accessibility-section">
-      <p data-i18n="accessibility">Accessibility</p>
-      <div class="language-selector-wrapper">
-        <label>
-          <select id="language-selector"
-                  class="language-selector">
-            <option value="en" data-i18n="languages.english">English</option>
-            <option value="zh" data-i18n="languages.chinese">现代汉语</option>
-          </select>
-        </label>
-        <div class="select-arrow"></div>
-      </div>
+        <!-- Accessibility Section -->
+        <div class="accessibility-section">
+            <p data-i18n="accessibility">Accessibility</p>
+            <div class="language-selector-wrapper">
+                <label>
+                    <select id="language-selector"
+                            class="language-selector">
+                        <option value="en" data-i18n="languages.english">English</option>
+                        <option value="zh" data-i18n="languages.chinese">现代汉语</option>
+                    </select>
+                </label>
+                <div class="select-arrow"></div>
+            </div>
 
-      <!-- 颜色选择器按钮 -->
-      <div class="color-theme-selector">
-        <button class="color-button color-button-red" data-color="#4b2328"></button>
-        <button class="color-button color-button-yellow" data-color="#a86800"></button>
-        <button class="color-button color-button-green" data-color="#395a57"></button>
-        <button class="color-button color-button-lavender" data-color="#4e4466"></button>
-        <button class="color-button color-button-dark" data-color="#1a1a1a"></button>
-      </div>
+            <!-- 颜色选择器 -->
+            <div class="color-theme-selector">
+                <button class="color-button color-button-red" data-color="#4b2328"></button>
+                <button class="color-button color-button-yellow" data-color="#a86800"></button>
+                <button class="color-button color-button-green" data-color="#395a57"></button>
+                <button class="color-button color-button-lavender" data-color="#4e4466"></button>
+                <button class="color-button color-button-dark" data-color="#1a1a1a"></button>
+            </div>
 
-    </div>
-  </div>
-
-  <div class="card-grid">
-
-    <div class="card">
-<!--      <div class="glass-image-container">-->
-<!--        <img src="images/witt-s-calculator.jpg" class="card-image">-->
-<!--        <div class="glass-overlay"></div>-->
-<!--      </div>-->
-        <div class="glass-image-container gradient-bg">
         </div>
-      <h3 data-i18n="weixin.title"></h3>
-        <p data-i18n="weixin.description"></p>
-        <a href="https://mp.weixin.qq.com/s/b6wxfJ-ndgf0hpJa0fnrGQ" class="button-link" data-i18n="weixin.hyperlink"></a>
-
-        <div class="tags-container">
-          <span class="tag tag-grey">Personal Project</span>
-        </div>
-
     </div>
 
-    <div class="card image-card">
-      <!-- 图片背景层 -->
-      <div class="card-img-background" style="background-image: url('images/witt-s-calculator.jpg');"></div>
+    <div class="card-grid">
 
-      <!-- 毛玻璃效果层（可选） -->
-      <div class="glass-overlay"></div>
+        <div class="card">
+            <!--      <div class="glass-image-container">-->
+            <!--        <img src="images/witt-s-calculator.jpg" class="card-image">-->
+            <!--        <div class="glass-overlay"></div>-->
+            <!--      </div>-->
+            <div class="glass-image-container-gradient-bg">
+            </div>
+            <h3 data-i18n="weixin.title"></h3>
+            <p data-i18n="weixin.description"></p>
+            <a href="https://mp.weixin.qq.com/s/b6wxfJ-ndgf0hpJa0fnrGQ" class="button-link"
+               data-i18n="weixin.hyperlink"></a>
 
-      <!-- 底部白色信息卡 -->
-      <div class="info-box">
-        <h3 data-i18n="ws_calc.title"></h3>
-        <p data-i18n="ws_calc.description"></p>
+            <div class="tags-container">
+                <span class="tag tag-grey">Personal Project</span>
+            </div>
 
-        <a href="https://github.com/tttiw/witt-s-calculator/releases/tag/Beta-1.0" class="button-link" data-i18n="download"></a>
-
-        <div class="tags-container">
-          <span class="tag tag-green">Python</span>
-          <span class="tag tag-red">Apache 2.0</span>
-          <span class="tag tag-blue">Beta</span>
         </div>
 
-      </div>
-    </div>
+        <div class="card image-card">
+            <!-- 图片背景 -->
+            <div class="card-img-background" style="background-image: url('images/witt-s-calculator.jpg');"></div>
+            <!-- 毛玻璃效果 -->
+            <div class="glass-overlay"></div>
+            <!-- 底部白色信息卡 -->
+            <div class="info-box">
+                <h3 data-i18n="ws_calc.title"></h3>
+                <p data-i18n="ws_calc.description"></p>
 
-    <div class="card">
-      <h3 data-i18n="updates.title"></h3>
-      <p data-i18n="updates.description"></p>
-    </div>
+                <a href="https://github.com/tttiw/witt-s-calculator/releases/tag/Beta-1.0" class="button-link"
+                   data-i18n="download"></a>
 
-    <div class="card">
-      <h3 data-i18n="game.title"></h3>
-      <p data-i18n="game.description"></p>
-      <div class="tags-container">
-        <span class="tag tag-yellow">C#</span>
-        <span class="tag tag-grey">TBA</span>
-      </div>
-    </div>
+                <div class="tags-container">
+                    <span class="tag tag-green">Python</span>
+                    <span class="tag tag-red">Apache 2.0</span>
+                    <span class="tag tag-blue">Beta</span>
+                </div>
 
-    <div class="card">
-      <h3 data-i18n="links.title"></h3>
-      <p >Brief description or content goes here.<span class="code-inline">example()</span></p>
-    </div>
+            </div>
+        </div>
 
-  </div>
+        <div class="card">
+            <h3 data-i18n="ws_calc_uu.title"></h3>
+            <p data-i18n="ws_calc_uu.description"></p>
+        </div>
+
+        <div class="card">
+            <div class="glass-image-container-gradient-yp">
+            </div>
+            <h3 data-i18n="game.title"></h3>
+            <p data-i18n="game.description"></p>
+            <div class="tags-container">
+                <span class="tag tag-yellow">C#</span>
+                <span class="tag tag-grey">TBA</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3 data-i18n="about_me.title"></h3>
+            <p><span class="code-inline">example()</span></p>
+            <table class="themed-table">
+                <thead>
+                <tr>
+                    <th>My<br>Favourite...</th>
+                    <th>is...</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>Hobby</td>
+                    <td>Dreaming</td>
+                </tr>
+
+                <tr>
+                    <td>Game</td>
+                    <td>Minecraft/<br>Terraria<br>(vanilla)</td>
+                </tr>
+
+                <tr>
+                    <td>Album</td>
+                    <td>Underwater<br>By Ludovico Einaudi</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+
+        <div class="card">
+            <h3 data-i18n="links.title"></h3>
+            <p><span class="code-inline">example()</span></p>
+            <a href="original_website.html" class="button-link">???</a>
+        </div>
+
+        <div class="card">
+            <h3 data-i18n="credits.title"></h3>
+            <p><span class="code-inline">example()</span></p>
+        </div>
+
+    </div>
 </div>
 
-<!-- 引入本地化脚本 -->
+<!-- 本地化 -->
 <script src="js/i18n.js"></script>
 
 <script>
-  // 颜色主题切换功能
-  document.addEventListener('DOMContentLoaded', function() {
-    const colorButtons = document.querySelectorAll('.color-button');
-    const redButton = document.querySelector('.color-button-red');
+    // 主题切换
+    document.addEventListener('DOMContentLoaded', function () {
+        const colorButtons = document.querySelectorAll('.color-button');
+        const redButton = document.querySelector('.color-button-red');
+        redButton.classList.add('active');
 
-    // 默认激活红色按钮
-    redButton.classList.add('active');
+        colorButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                colorButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                const color = this.getAttribute('data-color');
+                document.body.style.backgroundColor = color;
+                localStorage.setItem('preferredTheme', color);
+            });
+        });
 
-    // 为每个颜色按钮添加点击事件
-    colorButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        // 移除所有按钮的active类
-        colorButtons.forEach(btn => btn.classList.remove('active'));
-
-        // 为当前点击的按钮添加active类
-        this.classList.add('active');
-
-        // 获取颜色值并更改背景
-        const color = this.getAttribute('data-color');
-        document.body.style.backgroundColor = color;
-
-        // 可选：保存用户选择到localStorage
-        localStorage.setItem('preferredTheme', color);
-      });
-    });
-
-    // 从localStorage加载用户之前的颜色选择（如果有）
-    const savedTheme = localStorage.getItem('preferredTheme');
-    if (savedTheme) {
-      document.body.style.backgroundColor = savedTheme;
-
-      // 找到对应颜色的按钮并激活它
-      colorButtons.forEach(btn => {
-        if (btn.getAttribute('data-color') === savedTheme) {
-          colorButtons.forEach(b => b.classList.remove('active'));
-          btn.classList.add('active');
+        const savedTheme = localStorage.getItem('preferredTheme');
+        if (savedTheme) {
+            document.body.style.backgroundColor = savedTheme;
+            // 找到对应按钮并激活
+            colorButtons.forEach(btn => {
+                if (btn.getAttribute('data-color') === savedTheme) {
+                    colorButtons.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                }
+            });
         }
-      });
-    }
-  });
+    });
 </script>
 
 </body>
+
 </html>

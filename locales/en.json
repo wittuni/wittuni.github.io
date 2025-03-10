@@ -1,6 +1,6 @@
 {
   "title": "tttiw.github.io",
-  "mainText": "Brief description or content goes here.",
+  "mainText": "<todo>",
   "weixin": {
     "title": "Illusory Dept.",
     "description": "My Weixin Official Account. A personal project. Not sure what to post yet.",
@@ -10,17 +10,24 @@
     "title": "witt's Calculator (Beta)",
     "description": "A minimalism calculator. Supports sympy and LaTeX syntax."
   },
-  "updates": {
-    "title": "Upcoming Updates",
-    "description": "witt's Calculator:\n- Beta 2.0 \n  - Custom UI schemes and localizations\n  - De-experiment LaTeX mode\n  - Truth table (By Mitchell Xu) integration\n- Beta 3.0\n  - Highlighting\n  - Typeset display"
+  "ws_calc_uu": {
+    "title": "witt's Calculator -\nUpcoming Updates",
+    "description": "- Beta 2.0 \n  - Custom UI schemes and localizations\n  - De-experiment LaTeX mode\n  - Truth table (By Mitchell Xu) integration\n\n- Beta 3.0\n  - Highlighting\n  - Typeset display"
 
   },
   "game": {
     "title": "A RPG",
     "description": "A secret project of mine. Details TBA."
   },
+  "about_me":{
+    "title": "Me",
+    "description": "todo"
+  },
   "links": {
     "title": "Friendly Links"
+  },
+  "credits": {
+    "title": "Credits"
   },
   "button": "Confetti",
   "accessibility": "Accessibility",
