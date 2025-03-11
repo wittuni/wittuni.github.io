@@ -622,7 +622,8 @@ body {
     position: relative;
     overflow: hidden;
     z-index: 1;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .button-link:hover {
@@ -736,6 +737,7 @@ input:checked + .slider:before {
 
 .buttons-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    /*flex-direction: column;*/
     gap: 15px;
 }

@@ -160,13 +160,23 @@
             <div class="modern-divider"></div>
 
             <div class="buttons-container">
+
                 <button class="button-link initial-state" data-target-url="https://zeyi2.github.io">
                     <span>Mitchell's Homepage</span>
+                </button>
+
+                <button class="button-link initial-state" data-target-url="">
+                    <span>Placeholder 1</span>
+                </button>
+
+                <button class="button-link initial-state" data-target-url="">
+                    <span>PH2</span>
                 </button>
 
                 <button class="button-link initial-state" data-target-url="original_website.html">
                     <span>???</span>
                 </button>
+
             </div>
 
         </div>
@@ -240,12 +250,16 @@
 
         buttons.forEach(button => {
             let clickState = 0; // 0: 初始状态，1: 半填充状态，2: 确认状态
+            let isTransitioning = false;
 
-            // 获取原始目标链接
             const targetUrl = button.getAttribute('data-target-url') || 'original_website.html';
 
             button.addEventListener('click', function (event) {
                 event.preventDefault();
+
+                if (isTransitioning) {
+                    return;
+                }
 
                 if (clickState === 0) {
                     button.classList.remove('initial-state');
@@ -255,17 +269,29 @@
                     button.classList.remove('half-filled');
                     button.classList.add('fully-filled');
                     clickState = 2;
+                    isTransitioning = true;
 
                     setTimeout(function () {
-                        window.location.href = targetUrl;
-                    }, 1000); // 1秒后跳转
+                        button.classList.remove('fully-filled');
+                        button.classList.add('initial-state');
+                        clickState = 0;
+                        // 监听过渡动画结束事件
+                        const transitionEndHandler = function() {
+                            // 移除事件监听器
+                            button.removeEventListener('transitionend', transitionEndHandler);
+                            isTransitioning = false
+                            window.location.href = targetUrl;
+                        };
+                        button.addEventListener('transitionend', transitionEndHandler);
+                    }, 700);
+
+
                 }
             });
 
-            // 保留您原有代码中的点击其他区域重置按钮状态的功能
             document.addEventListener('click', function (event) {
                 if (clickState === 1 && !button.contains(event.target)) {
-                    // 只在半填充状态且点击了按钮外部时重置
+                    // 半填充状态且点击按钮外部时重置
                     button.classList.remove('half-filled');
                     button.classList.add('initial-state');
                     clickState = 0;
