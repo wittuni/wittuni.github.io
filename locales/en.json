@@ -10,7 +10,7 @@
     "description": "A minimalism calculator. Supports sympy and LaTeX syntax."
   },
   "ws_calc_uu": {
-    "title": "witt's Calculator -\nUpcoming Updates",
+    "title": "witt's Calculator - Upcoming Updates",
     "description": "- Beta 2.0 \n  - Custom UI schemes and localizations\n  - De-experiment LaTeX mode\n  - Truth table (By Mitchell Xu) integration\n\n- Beta 3.0\n  - Highlighting\n  - Typeset display"
   },
   "game": {
@@ -37,7 +37,8 @@
     "title": "Friendly Links"
   },
   "credits": {
-    "title": "Credits"
+    "title": "Credits",
+    "description": "By tttiw.\n\nThe app icon for witt's Calculator is made by 3s..\n====================\nLast edit: 2025/3\nv8.0"
   },
   "issues": {
     "title": "Report Issues",

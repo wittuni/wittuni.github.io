@@ -10,7 +10,7 @@
     "description": "极简计算器。支持 sympy 和 LaTeX 语法。"
   },
   "ws_calc_uu": {
-    "title": "witt's Calculator -\n更新计划",
+    "title": "witt's Calculator - 更新计划",
     "description": "- Beta 2.0 \n  - Custom UI schemes and localizations\n  - De-experiment LaTeX mode\n  - Truth table (By Mitchell Xu) integration\n\n- Beta 3.0\n  - Highlighting\n  - Typeset display"
 
   },
@@ -38,7 +38,8 @@
     "title": "友情链接"
   },
   "credits": {
-    "title": "鸣谢"
+    "title": "鸣谢",
+    "description": "By tttiw.\n\nwitt's Calculator的图标由3s.绘制。\n====================\n最后编辑于：2025/3\nv8.0"
   },
   "issues": {
     "title": "漏洞汇报",
