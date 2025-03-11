@@ -157,7 +157,7 @@ body {
   font-size: 0.9em;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   transition: all 0.3s ease;
-  font-family: 'Andy Bold', 'JingNanMaiYuanTi', sans-serif;
+  font-family: inherit;
 }
 
 .action-button:active {
@@ -485,10 +485,29 @@ body {
   border-radius: 4px;
   padding: 2px 6px;
   font-size: 0.9em;
-  color: #d63384;
+  color: #1a1a1a;
   white-space: nowrap;
   display: inline-block;
   margin: 0 2px;
+  max-width: 100%;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+.code-inline::-webkit-scrollbar {
+  height: 6px;
+}
+.code-inline::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+.code-inline::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, rgba(75, 0, 130, 0.25), rgba(65, 105, 225, 0.25));
+  border-radius: 3px;
+  border: 1px solid #f1f1f1; /* 与轨道衔接视觉过渡 */
+}
+.code-inline::-webkit-scrollbar-thumb:hover {
+  background-color: #555;    /* 悬停时颜色 */
 }
 
 .glass-image-container-gradient-bg {
@@ -559,7 +578,7 @@ body {
 
   width: 100%;
   border-collapse: collapse;
-  font-family: 'Andy Bold', sans-serif;
+  font-family: inherit;
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -616,4 +635,13 @@ body {
 
 .mirror-flip {
   transform: scaleX(-1);
+}
+
+.modern-divider {
+  height: 3px;
+  margin: 24px auto;
+  width: 95%;
+  background: rgba(75, 35, 40, 0.7);
+  border-radius: 2px;
+  position: relative;
 }
