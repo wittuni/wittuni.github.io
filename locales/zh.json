@@ -21,7 +21,7 @@
   },
   "about_me":{
     "title": "Me!",
-    "description": "'What day is it today?'\n'It's today.'\n'Oh. My favourite day.'",
+    "description": "- 'What day is it today?'\n- 'It's today.'\n- 'Oh. My favourite day.'",
     "fav_table": {
       "l1r1": "我最喜欢的...",
       "l1r2": "是...",
@@ -30,7 +30,7 @@
       "l3r1": "游戏",
       "l3r2": "Minecraft或Terraria（原版）",
       "l4r1": "专辑",
-      "l4r2": "Underwater\nBy Ludovico Einaudi"
+      "l4r2": "Underwater\nby Ludovico Einaudi"
     }
   },
   "links": {

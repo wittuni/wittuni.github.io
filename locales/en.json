@@ -4,7 +4,7 @@
   "weixin": {
     "title": "Illusory Dept.",
     "description": "My Weixin Official Account. A personal project. Not sure what to post yet.",
-    "hyperlink": "goto"
+    "hyperlink": "Visit"
   },
   "ws_calc": {
     "title": "witt's Calculator (Beta)",
@@ -20,7 +20,7 @@
   },
   "about_me": {
     "title": "Me!",
-    "description": "'What day is it today?'\n'It's today.'\n'Oh. My favourite day.'",
+    "description": "- 'What day is it today?'\n- 'It's today.'\n- 'Oh. My favourite day.'",
     "fav_table": {
       "l1r1": "My favourite...",
       "l1r2": "is...",
