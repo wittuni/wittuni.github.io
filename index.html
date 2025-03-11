@@ -125,8 +125,15 @@
             </div>
             <h3 data-i18n="weixin.title"></h3>
             <p data-i18n="weixin.description"></p>
-            <a href="https://mp.weixin.qq.com/s/b6wxfJ-ndgf0hpJa0fnrGQ" class="button-link"
-               data-i18n="weixin.hyperlink"></a>
+
+            <div class="button-link-container">
+                <button class="button-link initial-state"
+                        data-target-url="https://mp.weixin.qq.com/s/b6wxfJ-ndgf0hpJa0fnrGQ"
+                >
+                    <span class="initial-text" data-i18n="weixin.hyperlink"></span>
+                    <span class="confirm-text" data-i18n="redirect_request"></span>
+                </button>
+            </div>
 
             <div class="tags-container">
                 <span class="tag tag-grey">Personal Project</span>
@@ -144,8 +151,14 @@
                 <h3 data-i18n="ws_calc.title"></h3>
                 <p data-i18n="ws_calc.description"></p>
 
-                <a href="https://github.com/tttiw/witt-s-calculator/releases/tag/Beta-1.0" class="button-link"
-                   data-i18n="download"></a>
+                <div class="button-link-container">
+                    <button class="button-link initial-state"
+                            data-target-url="https://github.com/tttiw/witt-s-calculator/releases/tag/Beta-1.0"
+                    >
+                        <span class="initial-text" data-i18n="download"></span>
+                        <span class="confirm-text" data-i18n="redirect_request"></span>
+                    </button>
+                </div>
 
                 <div class="tags-container">
                     <span class="tag tag-green">Python</span>
@@ -215,10 +228,28 @@
         <div class="card">
             <h3 data-i18n="links.title"></h3>
             <p><span class="code-inline">placeholder@placeholder.org</span><span class="code-inline">placeholderplaceholderplaceholderplaceholderplaceholderplaceholder@placeholder.org</span></p>
-            <div class="modern-divider">
+            <div class="modern-divider"></div>
 
+            <div class="button-link-container">
+                <button class="button-link initial-state"
+                        data-target-url="zeyi2.github.io"
+                >
+                    <span class="initial-text">Mitchell's Homepage</span>
+                    <span class="confirm-text" data-i18n="redirect_request"></span>
+                </button>
             </div>
-            <a href="original_website.html" class="button-link">???</a>
+
+            <br>
+
+            <div class="button-link-container">
+                <button class="button-link initial-state"
+                        data-target-url="original_website.html"
+                >
+                    <span class="initial-text">???</span>
+                    <span class="confirm-text" data-i18n="redirect_request"></span>
+                </button>
+            </div>
+
         </div>
 
         <div class="card">
@@ -260,6 +291,37 @@
                 }
             });
         }
+    });
+</script>
+
+<script>
+    //跳转确认按钮
+    document.addEventListener('DOMContentLoaded', function () {
+        const buttons = document.querySelectorAll('.button-link.initial-state');
+
+        buttons.forEach(button => {
+            let isConfirmState = false;
+
+            button.addEventListener('click', function (event) {
+                event.preventDefault();
+
+                if (!isConfirmState) {
+                    button.classList.remove('initial-state');
+                    button.classList.add('confirm-state');
+                    isConfirmState = true;
+                } else {
+                    window.location.href = button.getAttribute('data-target-url') || 'original_website.html';
+                }
+            });
+
+            document.addEventListener('click', function (event) {
+                if (isConfirmState && !button.contains(event.target)) {
+                    button.classList.remove('confirm-state');
+                    button.classList.add('initial-state');
+                    isConfirmState = false;
+                }
+            });
+        });
     });
 </script>
 
