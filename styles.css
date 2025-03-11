@@ -699,7 +699,7 @@ body {
     background-color: #fff;
     transition: 0.4s ease;
     border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* 未选中状态 */
@@ -722,4 +722,10 @@ input:checked + .slider:before {
 /* 悬停效果 */
 .slider:hover {
     opacity: 0.9;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
