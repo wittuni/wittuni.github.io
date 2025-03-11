@@ -12,6 +12,11 @@ h3, p {
     white-space: pre-wrap;
 }
 
+/* 全局去除iOS点击高亮 */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
 body {
     font-family: 'Andy Bold', 'JingNanMaiYuanTi', sans-serif;
     background-color: #4b2328;
@@ -697,7 +702,6 @@ body {
     background-color: #ccc;
     transition: 0.4s ease all;
     border-radius: 28px;
-    -webkit-tap-highlight-color: transparent; /* 去除iOS点击高亮 */
 }
 
 /* 滑块球 */
@@ -712,7 +716,6 @@ body {
     transition: 0.4s ease;
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    -webkit-tap-highlight-color: transparent; /* 去除iOS点击高亮 */
 }
 
 /* 未选中状态 */
