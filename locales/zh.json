@@ -4,7 +4,7 @@
   "weixin": {
     "title": "Illusory Dept.",
     "description": "我的微信公众号，是一项个人项目。还不确定该怎么做。",
-    "hyperlink": "goto"
+    "hyperlink": "前往"
   },
   "ws_calc": {
     "title": "witt's Calculator (Beta)",
@@ -21,7 +21,17 @@
   },
   "about_me":{
     "title": "Me!",
-    "description": "'What day is it today?'\n'It's today.'\n'Oh. My favourite day.'"
+    "description": "'What day is it today?'\n'It's today.'\n'Oh. My favourite day.'",
+    "fav_table": {
+      "l1r1": "我最喜欢的...",
+      "l1r2": "是...",
+      "l2r1": "爱好",
+      "l2r2": "白日梦",
+      "l3r1": "游戏",
+      "l3r2": "Minecraft或Terraria（原版）",
+      "l4r1": "专辑",
+      "l4r2": "Underwater\nBy Ludovico Einaudi"
+    }
   },
   "links": {
     "title": "友情链接"

@@ -13,15 +13,24 @@
   "ws_calc_uu": {
     "title": "witt's Calculator -\nUpcoming Updates",
     "description": "- Beta 2.0 \n  - Custom UI schemes and localizations\n  - De-experiment LaTeX mode\n  - Truth table (By Mitchell Xu) integration\n\n- Beta 3.0\n  - Highlighting\n  - Typeset display"
-
   },
   "game": {
     "title": "A RPG",
     "description": "A secret project of mine. Details TBA."
   },
-  "about_me":{
+  "about_me": {
     "title": "Me!",
-    "description": "'What day is it today?'\n'It's today.'\n'Oh. My favourite day.'"
+    "description": "'What day is it today?'\n'It's today.'\n'Oh. My favourite day.'",
+    "fav_table": {
+      "l1r1": "My favourite...",
+      "l1r2": "is...",
+      "l2r1": "Hobby",
+      "l2r2": "Daydreaming",
+      "l3r1": "Game",
+      "l3r2": "Minecraft or Terraria (vanilla)",
+      "l4r1": "Album",
+      "l4r2": "Underwater by Ludovico Einaudi"
+    }
   },
   "links": {
     "title": "Friendly Links"
