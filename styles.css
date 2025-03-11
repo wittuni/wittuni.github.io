@@ -47,11 +47,6 @@ body {
     transform: scale(1.05);
 }
 
-.card:hover .glass-overlay {
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(5px);
-}
-
 /* 卡片网格布局 */
 .card-grid {
     display: grid;
@@ -199,6 +194,11 @@ body {
     border-radius: 6px;
 }
 
+.card:hover .glass-overlay {
+    /*backdrop-filter: blur(5.5px);*/
+    /*-webkit-backdrop-filter: blur(5.5px);*/
+}
+
 /* 长方形图片卡片 */
 .image-card {
     position: relative;
@@ -223,6 +223,30 @@ body {
     background-position: center;
     transition: transform 0.5s ease;
     transform: scale(1.1);
+}
+
+.image-card:hover {
+    /*transform: translateY(-5px);*/
+    /*transform: scale(1.02);*/
+    /*box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);*/
+}
+
+/* 桌面端保留悬停效果 */
+@media (min-width: 768px) {
+    .image-card:hover .card-img-background {
+        transform: scale(1.15);
+    }
+}
+
+/* 移动端禁用悬停效果 */
+@media (max-width: 767px) {
+    .image-card:hover .card-img-background {
+        transform: scale(1.1);
+    }
+}
+
+.image-card {
+    position: relative;
 }
 
 /* 底部白色信息卡 */
@@ -255,20 +279,6 @@ body {
     font-size: 14px;
     line-height: 1.4;
     padding-bottom: 10px;
-}
-
-.image-card:hover {
-    /*transform: translateY(-5px);*/
-    /*transform: scale(1.02);*/
-    /*box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);*/
-}
-
-.image-card:hover .card-img-background {
-    transform: scale(1.15);
-}
-
-.image-card {
-    position: relative;
 }
 
 .tags-container {
