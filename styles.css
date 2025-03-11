@@ -609,62 +609,117 @@ body {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
     width: fit-content;
     font-family: inherit;
-    transition: background 1s ease;
-
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
-.button-link.initial-state .confirm-text {
-    display: none;
-}
-
-.button-link.confirm-state {
-    /*justify-content: center;*/
-    /*background: rgba(168, 104, 0, 0.3);*/
-    background: linear-gradient(45deg,rgba(168, 104, 0, 0.3),rgb(240, 219, 79, 0.3));
-    border: 2px solid;
-    /*border-image: linear-gradient(45deg, #8B0000, #000000) 1; !* 红黑渐变边框 *!*/
-    color: #000;
-    border-radius: 6px;
-    transition: none;
-}
-
-/* 解决border-image和border-radius不兼容的问题 */
-/*.redirect-button-link.confirm-state:before {*/
-/*    content: '';*/
-/*    position: absolute;*/
-/*    top: 0;*/
-/*    left: 0;*/
-/*    right: 0;*/
-/*    bottom: 0;*/
-/*    border-radius: 6px;*/
-/*    border: 2px solid transparent;*/
-/*    background: linear-gradient(45deg, #8B0000, #000000) border-box;*/
-/*    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);*/
-/*    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);*/
-/*    -webkit-mask-composite: destination-out;*/
-/*    mask-composite: exclude;*/
-/*    pointer-events: none;*/
-/*}*/
-
-.button-link.confirm-state .initial-text {
-    display: none;
-}
-
-/*@keyframes fadeIn {*/
-/*    0% {*/
-/*        opacity: 0;*/
-/*    }*/
-/*    100% {*/
-/*        opacity: 1;*/
-/*    }*/
-/*}*/
-
 
 .button-link:hover {
-    background: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.03);
+    transform: translateY(-1px);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
-.button-link.confirm-state:hover {
-    background: linear-gradient(45deg, rgba(168, 104, 0, 0.3),rgb(240, 219, 79, 0.3));
+/* 用于背景动画的伪元素 */
+.button-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(168, 104, 0, 0.3), rgb(240, 219, 79, 0.3));
+    z-index: -1;
+    transition: transform 0.6s ease;
+    transform: translateX(0);
+}
 
+/* 半填充状态 */
+.button-link.half-filled::before {
+    transform: translateX(50%);
+}
+
+/* 完全填充状态 */
+.button-link.fully-filled::before {
+    transform: translateX(100%);
+}
+
+/* 防止悬停效果覆盖填充动画 */
+.button-link.half-filled:hover,
+.button-link.fully-filled:hover {
+    background-color: transparent;
+}
+
+.switch-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
+
+.switch-label {
+    font-size: 1rem;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* 滑块外壳 */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s ease all;
+    border-radius: 28px;
+}
+
+/* 滑块球 */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: #fff;
+    transition: 0.4s ease;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 未选中状态 */
+input + .slider {
+    background: linear-gradient(45deg, #d1d1d1, #cacaca, #b9b9b9);
+}
+
+input:checked + .slider {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px rgba(77, 97, 230, 0.4);
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px);
+}
+
+/* 悬停效果 */
+.slider:hover {
+    opacity: 0.9;
 }

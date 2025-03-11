@@ -3,8 +3,7 @@
   "mainText": "I don't know what to put here.\nSo I'll just wish you a good day :)",
   "weixin": {
     "title": "Illusory Dept.",
-    "description": "My Weixin Official Account. A personal project. Not sure what to post yet.",
-    "hyperlink": "Visit"
+    "description": "My Weixin Official Account. A personal project. Not sure what to post yet."
   },
   "ws_calc": {
     "title": "witt's Calculator (Beta)",
@@ -38,8 +37,14 @@
   "credits": {
     "title": "Credits"
   },
+  "issues": {
+    "title": "Report Issues",
+    "description": "Report issues or suggestions here:",
+    "redirect": "(Here)"
+  },
   "confetti": "Confetti",
   "accessibility": "Accessibility & Customization",
   "download": "Download",
-  "redirect_request": "Redirect?"
+  "visit": "Visit",
+  "unlimited_confetti": "Unlimited Confetti"
 }
