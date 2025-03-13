@@ -39,7 +39,7 @@
   },
   "credits": {
     "title": "鸣谢",
-    "description": "By tttiw.\n\nwitt's Calculator的图标由3s.绘制。\n====================\n最后编辑于：2025/3\nv8.0"
+    "description": "By tttiw.\n\nwitt's Calculator的图标由3s.绘制。\n====================\n最后编辑于：2025/3\nv9.1"
   },
   "issues": {
     "title": "漏洞汇报",
@@ -51,7 +51,8 @@
     "execute": "执行",
     "clear": "清空终端",
     "reset": "重置环境",
-    "maximize": "最大化终端"
+    "maximize": "最大化终端",
+    "description": "(1) Ctrl+Enter 以执行\n(2) 请勿执行耗时代码\n(3) 加载库：\nimport pyodide_js\nawait pyodide_js.loadPackage('package_name')"
   },
   "confetti": "彩纸",
   "accessibility": "辅助功能与个性化",

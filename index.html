@@ -47,12 +47,31 @@
                     <button class="color-button color-button-dark" data-color="#1a1a1a"></button>
                 </div>
 
+                <!-- 夜间模式开关 -->
+                <div class="theme-switch-wrapper">
+                    <div class="theme-switch">
+                        <input type="checkbox" id="theme-toggle">
+                        <label class="slider" for="theme-toggle">
+                            <span class="star star1"></span>
+                            <span class="star star2"></span>
+                            <span class="star star3"></span>
+                            <span class="star star4"></span>
+                            <span class="star star5"></span>
+                        </label>
+                    </div>
+                    <span class="theme-label">夜间模式</span>
+                </div>
+
             </div>
         </div>
 
-        <!-- Python终端卡片 -->
+        <!-- Python终端 -->
         <div class="card python-terminal-card card-wide">
             <h3 data-i18n="terminal.title">Terminal</h3>
+            <p>
+                <span class="code-inline independent-code-inline"
+                      data-i18n="terminal.description"></span>
+            </p>
             <div class="terminal-container">
                 <div id="python-terminal" class="python-terminal"></div>
             </div>
@@ -151,7 +170,7 @@
         <div class="card">
             <h3 data-i18n="ws_calc_uu.title"></h3>
             <p>
-                <span class="code-inline"
+                <span class="code-inline independent-code-inline"
                       data-i18n="ws_calc_uu.description"></span>
             </p>
         </div>
@@ -266,17 +285,19 @@
         <div class="card">
             <h3 data-i18n="credits.title"></h3>
             <p>
-                <span class="code-inline"
-                      data-i18n="credits.description"></span>
+                <span class="code-inline independent-code-inline"
+                      data-i18n="credits.description"
+                ></span>
             </p>
             <div class="modern-divider"></div>
-            <div class="switch-container">
-                <label class="switch-label" data-i18n="unlimited_confetti"></label>
-                <label class="switch">
+            <div class="setting-switch-container">
+                <label class="setting-switch-label" data-i18n="unlimited_confetti"></label>
+                <label class="setting-switch">
                     <input type="checkbox" id="cooldown-toggle">
-                    <span class="slider round"></span>
+                    <span class="setting-slider"></span>
                 </label>
             </div>
+
 
         </div>
 
@@ -301,6 +322,7 @@
 <script src="js/confetti.js"></script>
 <script src="js/python-terminal.js"></script>
 <script src="js/i18n.js"></script>
+<script src="js/dark-mode.js"></script>
 
 </body>
 

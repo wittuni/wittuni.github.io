@@ -74,6 +74,49 @@ body {
     align-self: start; /* 让卡片从顶部开始对齐，不会被拉伸 */
 }
 
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 15px; /* 减少间隙 */
+    }
+
+    .card-wide {
+        grid-column: auto;
+    }
+
+    .card {
+        width: auto;
+        padding: 15px;
+        padding-bottom: 45px;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        overflow-x: hidden;
+    }
+
+    .card img,
+    .card table,
+    .card iframe,
+    .card pre {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .action-button {
+        padding: 10px 18px;
+        font-size: 0.85em;
+    }
+
+    /* 针对accessibility-section的调整 */
+    .accessibility-section {
+        max-width: none; /* 移除最大宽度限制 */
+    }
+}
+
 /*.hero-card {*/
 /*    position: relative;*/
 /*    padding-bottom: 70px; !* 增加底部内边距，为按钮留出空间 *!*/
@@ -681,32 +724,32 @@ body {
     background-color: transparent;
 }
 
-.switch-container {
+.setting-switch-container {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     margin: 1rem 0;
 }
 
-.switch-label {
+.setting-switch-label {
     font-size: 1rem;
 }
 
-.switch {
+.setting-switch {
     position: relative;
     display: inline-block;
     width: 50px;
     height: 28px;
 }
 
-.switch input {
+.setting-switch input {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
 /* 滑块外壳 */
-.slider {
+.setting-slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -719,7 +762,7 @@ body {
 }
 
 /* 滑块球 */
-.slider:before {
+.setting-slider:before {
     position: absolute;
     content: "";
     height: 22px;
@@ -733,23 +776,23 @@ body {
 }
 
 /* 未选中状态 */
-input + .slider {
+input + .setting-slider {
     background: linear-gradient(45deg, #d1d1d1, #cacaca, #b9b9b9);
 }
 
-input:checked + .slider {
+input:checked + .setting-slider {
     background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
 }
 
-input:focus + .slider {
+input:focus + .setting-slider {
     box-shadow: 0 0 1px rgba(77, 97, 230, 0.4);
 }
 
-input:checked + .slider:before {
+input:checked + .setting-slider:before {
     transform: translateX(22px);
 }
 
-.slider:hover {
+.setting-slider:hover {
     opacity: 0.9;
 }
 
@@ -876,7 +919,310 @@ input:checked + .slider:before {
     background: #7f7f7f;
 }
 
+/* 夜间模式开关样式 */
 
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.theme-switch {
+    display: inline-block;
+    height: 26px;
+    position: relative;
+    width: 50px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+/* 滑块基本样式 */
+.slider {
+    background-color: #ccc;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: .4s;
+    border-radius: 34px;
+    overflow: hidden; /* 确保星星不溢出滑块边界 */
+}
+
+/* 滑块上的圆形按钮 */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+    z-index: 3; /* 确保滑块在最上层 */
+}
+
+/* 星空背景 */
+.theme-switch input:checked + .slider {
+    background: linear-gradient(135deg, #2a0845 0%, #1b1b3a 50%, #000000 100%);
+}
+
+/* 第一层星星 - 小且数量多 */
+.theme-switch input:checked + .slider:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* 确保在滑块下方 */
+    background-image:
+            radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px),
+            radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px),
+            radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px),
+            radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px);
+    background-size: 30px 30px;
+    background-position:
+            5px 5px,
+            15px 12px,
+            25px 7px,
+            35px 18px;
+    opacity: 0.8;
+    animation: twinkle1 5s infinite alternate;
+}
+
+
+.theme-switch input:checked + .slider:before {
+    transform: translateX(24px);
+    background-color: #f1c40f;
+    box-shadow: 0 0 10px #f1c40f, 0 0 20px #f1c40f; /* 发光效果 */
+    z-index: 3; /* 确保在最上层 */
+}
+
+/* 添加一个额外元素用于第二层星星 */
+.theme-switch input:checked + .slider:after {
+    content: '';
+    box-shadow:
+            10px 8px 1px 1px rgba(255,255,255,0.9),
+            20px 15px 1px 1px rgba(255,255,255,0.8),
+            30px 10px 1px 1px rgba(255,255,255,0.7),
+            40px 20px 1px 1px rgba(255,255,255,0.9);
+}
+
+/* 星星闪烁动画 */
+@keyframes twinkle1 {
+    0% { opacity: 0.3; }
+    33% { opacity: 0.8; }
+    66% { opacity: 0.5; }
+    100% { opacity: 0.7; }
+}
+
+/* 滑块发光动画 */
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #f1c40f; }
+    50% { box-shadow: 0 0 15px #f1c40f, 0 0 25px #f1c40f; }
+    100% { box-shadow: 0 0 5px #f1c40f; }
+}
+
+.theme-switch input:checked + .slider:before {
+    animation: glow 5s infinite;
+}
+
+/* 闪烁的星星独立元素 */
+.theme-switch input:checked + .slider .star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    width: 1px;
+    height: 1px;
+    opacity: 0.9;
+    z-index: 2;
+}
+
+/* 固定位置的星星 */
+.star1 { left: 8px; top: 6px; animation: twinkle1 3s infinite; }
+.star2 { left: 15px; top: 18px; animation: twinkle1 4s infinite 1s; }
+.star3 { left: 25px; top: 8px; animation: twinkle1 5s infinite 0.5s; }
+.star4 { left: 35px; top: 15px; animation: twinkle1 4s infinite 1.5s; }
+.star5 { left: 45px; top: 12px; animation: twinkle1 3.5s infinite 0.7s; }
+
+/* 添加主题标签样式 */
+.theme-label {
+    margin-left: 10px; /* 与滑块保持一定距离 */
+    font-size: 16px;
+    font-weight: 500;
+    color: #333; /* 默认颜色 */
+    transition: color 0.3s ease; /* 平滑过渡效果 */
+}
+
+body.dark-mode .theme-label {
+    color: #f1c40f;
+}
+
+/* 夜间模式样式 */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .card {
+    background-color: #1e1e1e;
+    color: #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .accessibility-section {
+    background-color: #2d2d2d;
+    border-color: #3a3a3a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .language-selector {
+    background-color: #333;
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+body.dark-mode .python-terminal {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+}
+
+body.dark-mode .terminal-container {
+    background-color: #1a1a1a;
+}
+
+body.dark-mode .code-inline,
+body.dark-mode .independent-code-inline {
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+    border: 1px solid #444;
+}
+
+/* 夜间模式下的信息框样式 */
+body.dark-mode .info-box {
+    background-color: #2d2d2d;
+    border-color: #444;
+    color: #e0e0e0;
+}
+
+body.dark-mode .info-box-title {
+    color: #66bb6a;
+}
+
+body.dark-mode .minimalism-button {
+
+    color: #e0e0e0;
+    border-color: #555;
+}
+
+body.dark-mode .minimalism-button:hover {
+    background-color: #444;
+}
+
+body.dark-mode .minimalism-button:active {
+    background-color: #222;
+}
+
+body.dark-mode .run-btn {
+    color: #a5d6a7;
+}
+
+body.dark-mode .clear-btn {
+    color: #ef9a9a;
+}
+
+body.dark-mode .reset-btn {
+    color: #ffe082;
+}
+
+body.dark-mode .clear-btn.minimalism-button::before{
+    background: #8c2525
+}
+
+body.dark-mode .reset-btn.minimalism-button::before{
+    background: #7d5f00
+}
+
+body.dark-mode .minimalism-button.half-filled:hover,
+body.dark-mode .minimalism-button.fully-filled:hover {
+    background-color: transparent;
+}
+
+/* 夜间模式下的信息框内部文字样式 */
+body.dark-mode .info-box p,
+body.dark-mode .info-box h3{
+    color: #e0e0e0;
+}
+
+body.dark-mode .info-box a {
+    color: #81c1ff;
+}
+
+body.dark-mode .info-box a:hover {
+    color: #a8d5ff;
+}
+
+body.dark-mode .tag-blue {
+    background-color: #0d47a1;
+    color: #90caf9;
+}
+
+body.dark-mode .tag-green {
+    background-color: #1b5e20;
+    color: #a5d6a7;
+}
+
+body.dark-mode .tag-red {
+    background-color: #b71c1c;
+    color: #ef9a9a;
+}
+
+body.dark-mode .tag-purple {
+    background-color: #4a148c;
+    color: #ce93d8;
+}
+
+body.dark-mode .tag-orange {
+    background-color: #e65100;
+    color: #ffcc80;
+}
+
+body.dark-mode .tag-gray {
+    background-color: #424242;
+    color: #bdbdbd;
+}
+
+body.dark-mode .tag-brown {
+    background-color: #4e342e;
+    color: #bcaaa4;
+}
+
+/* 夜间模式下的表格样式  */
+body.dark-mode table th {
+    background-color: #572222;
+    color: #f0f0f0;
+    border-color: #662929;
+}
+
+/* 夜间模式下表格交替行样式 */
+body.dark-mode table tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+body.dark-mode table tr:nth-child(odd) {
+    background-color: #333333;
+}
+
+/* 夜间模式下表格边框 */
+body.dark-mode table td {
+    border-color: #444;
+    color: #e0e0e0;
+}
 
 /* 选择器 */
 
@@ -884,8 +1230,7 @@ input:checked + .slider:before {
     white-space: pre-wrap;
 }
 
-[data-i18n="credits.description"],
-[data-i18n="ws_calc_uu.description"]
+.independent-code-inline
 {
     overflow-wrap: break-word;
     white-space: pre-wrap;

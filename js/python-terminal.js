@@ -269,7 +269,7 @@ document.addEventListener('DOMContentLoaded', function () {
         sys.stderr = StringIO()
     `);
 
-            // 执行代码 - 改为异步调用
+            // 执行
             await pyodideInstance.runPythonAsync(code);
 
             // 获取输出
