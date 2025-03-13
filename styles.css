@@ -74,49 +74,6 @@ body {
     align-self: start; /* 让卡片从顶部开始对齐，不会被拉伸 */
 }
 
-@media (max-width: 767px) {
-    .container {
-        width: 95%;
-        padding: 10px;
-    }
-
-    .card-grid {
-        grid-template-columns: 1fr;
-        gap: 15px; /* 减少间隙 */
-    }
-
-    .card-wide {
-        grid-column: auto;
-    }
-
-    .card {
-        width: auto;
-        padding: 15px;
-        padding-bottom: 45px;
-        overflow-wrap: break-word;
-        word-break: break-word;
-        overflow-x: hidden;
-    }
-
-    .card img,
-    .card table,
-    .card iframe,
-    .card pre {
-        max-width: 100%;
-        height: auto;
-    }
-
-    .action-button {
-        padding: 10px 18px;
-        font-size: 0.85em;
-    }
-
-    /* 针对accessibility-section的调整 */
-    .accessibility-section {
-        max-width: none; /* 移除最大宽度限制 */
-    }
-}
-
 /*.hero-card {*/
 /*    position: relative;*/
 /*    padding-bottom: 70px; !* 增加底部内边距，为按钮留出空间 *!*/
@@ -157,13 +114,6 @@ body {
     /*margin-left: auto; !* 水平居中 *!*/
     /*margin-right: auto; !* 水平居中 *!*/
     box-sizing: border-box; /* 确保padding不会增加元素总宽度 */
-}
-
-/* 在小屏幕上调整padding */
-@media (max-width: 768px) {
-    .accessibility-section {
-        padding: 15px 20px; /* 在小屏幕上减少内边距 */
-    }
 }
 
 .language-selector-wrapper {
@@ -1235,4 +1185,50 @@ body.dark-mode table td {
     overflow-wrap: break-word;
     white-space: pre-wrap;
     padding: 10px 10px;
+}
+
+/* 媒体查询 */
+
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 15px; /* 减少间隙 */
+    }
+
+    .card-wide {
+        grid-column: auto;
+    }
+
+    .card {
+        width: auto;
+        padding: 15px;
+        padding-bottom: 60px;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        overflow-x: hidden;
+    }
+
+    .card img,
+    .card table,
+    .card iframe,
+    .card pre {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .action-button {
+        padding: 10px 18px;
+        font-size: 0.85em;
+    }
+
+    /* 针对accessibility-section的调整 */
+    .accessibility-section {
+        max-width: none;
+        padding: 15px 20px;/* 移除最大宽度限制 */
+    }
 }
