@@ -803,7 +803,7 @@ input:checked + .setting-slider:before {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-bottom: 20px;  /* 按钮和标签之间添加间距 */
+    margin-bottom: 20px; /* 按钮和标签之间添加间距 */
     padding-bottom: 10px;
 }
 
@@ -818,7 +818,8 @@ input:checked + .setting-slider:before {
 .clear-btn.minimalism-button::before,
 .minimalism-button.your-button-class::before {
     background: linear-gradient(90deg, rgba(255, 182, 193, 0.8
-    ), rgba(199, 21, 133, 0.3));}
+    ), rgba(199, 21, 133, 0.3));
+}
 
 .reset-btn {
     border-color: #94bff3;
@@ -826,7 +827,8 @@ input:checked + .setting-slider:before {
 
 .reset-btn.minimalism-button::before,
 .minimalism-button.your-button-class::before {
-    background: linear-gradient(90deg, rgba(100, 177, 215, 0.6), rgba(39, 83, 148, 0.3));}
+    background: linear-gradient(90deg, rgba(100, 177, 215, 0.6), rgba(39, 83, 148, 0.3));
+}
 
 
 .terminal-output {
@@ -846,7 +848,7 @@ input:checked + .setting-slider:before {
     color: #94bff3;
 }
 
-.terminal-info{
+.terminal-info {
     color: #efe3be;
     font-weight: bold;
 }
@@ -930,17 +932,15 @@ input:checked + .setting-slider:before {
     top: 0;
     left: 0;
     z-index: 1; /* 确保在滑块下方 */
-    background-image:
-            radial-gradient(circle, rgba(255,255,255,0.9) 1px, transparent 1px),
-            radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px),
-            radial-gradient(circle, rgba(255,255,255,0.7) 1px, transparent 1px),
-            radial-gradient(circle, rgba(255,255,255,0.6) 1px, transparent 1px);
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.9) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.8) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.7) 1px, transparent 1px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.6) 1px, transparent 1px);
     background-size: 30px 30px;
-    background-position:
-            5px 5px,
-            15px 12px,
-            25px 7px,
-            35px 18px;
+    background-position: 5px 5px,
+    15px 12px,
+    25px 7px,
+    35px 18px;
     opacity: 0.8;
     animation: twinkle1 5s infinite alternate;
 }
@@ -956,26 +956,39 @@ input:checked + .setting-slider:before {
 /* 添加一个额外元素用于第二层星星 */
 .theme-switch input:checked + .slider:after {
     content: '';
-    box-shadow:
-            10px 8px 1px 1px rgba(255,255,255,0.9),
-            20px 15px 1px 1px rgba(255,255,255,0.8),
-            30px 10px 1px 1px rgba(255,255,255,0.7),
-            40px 20px 1px 1px rgba(255,255,255,0.9);
+    box-shadow: 10px 8px 1px 1px rgba(255, 255, 255, 0.9),
+    20px 15px 1px 1px rgba(255, 255, 255, 0.8),
+    30px 10px 1px 1px rgba(255, 255, 255, 0.7),
+    40px 20px 1px 1px rgba(255, 255, 255, 0.9);
 }
 
 /* 星星闪烁动画 */
 @keyframes twinkle1 {
-    0% { opacity: 0.3; }
-    33% { opacity: 0.8; }
-    66% { opacity: 0.5; }
-    100% { opacity: 0.7; }
+    0% {
+        opacity: 0.3;
+    }
+    33% {
+        opacity: 0.8;
+    }
+    66% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0.7;
+    }
 }
 
 /* 滑块发光动画 */
 @keyframes glow {
-    0% { box-shadow: 0 0 5px #f1c40f; }
-    50% { box-shadow: 0 0 15px #f1c40f, 0 0 25px #f1c40f; }
-    100% { box-shadow: 0 0 5px #f1c40f; }
+    0% {
+        box-shadow: 0 0 5px #f1c40f;
+    }
+    50% {
+        box-shadow: 0 0 15px #f1c40f, 0 0 25px #f1c40f;
+    }
+    100% {
+        box-shadow: 0 0 5px #f1c40f;
+    }
 }
 
 .theme-switch input:checked + .slider:before {
@@ -994,11 +1007,35 @@ input:checked + .setting-slider:before {
 }
 
 /* 固定位置的星星 */
-.star1 { left: 8px; top: 6px; animation: twinkle1 3s infinite; }
-.star2 { left: 15px; top: 18px; animation: twinkle1 4s infinite 1s; }
-.star3 { left: 25px; top: 8px; animation: twinkle1 5s infinite 0.5s; }
-.star4 { left: 35px; top: 15px; animation: twinkle1 4s infinite 1.5s; }
-.star5 { left: 45px; top: 12px; animation: twinkle1 3.5s infinite 0.7s; }
+.star1 {
+    left: 8px;
+    top: 6px;
+    animation: twinkle1 3s infinite;
+}
+
+.star2 {
+    left: 15px;
+    top: 18px;
+    animation: twinkle1 4s infinite 1s;
+}
+
+.star3 {
+    left: 25px;
+    top: 8px;
+    animation: twinkle1 5s infinite 0.5s;
+}
+
+.star4 {
+    left: 35px;
+    top: 15px;
+    animation: twinkle1 4s infinite 1.5s;
+}
+
+.star5 {
+    left: 45px;
+    top: 12px;
+    animation: twinkle1 3.5s infinite 0.7s;
+}
 
 /* 添加主题标签样式 */
 .theme-label {
@@ -1090,11 +1127,11 @@ body.dark-mode .reset-btn {
     color: #ffe082;
 }
 
-body.dark-mode .clear-btn.minimalism-button::before{
+body.dark-mode .clear-btn.minimalism-button::before {
     background: #8c2525
 }
 
-body.dark-mode .reset-btn.minimalism-button::before{
+body.dark-mode .reset-btn.minimalism-button::before {
     background: #7d5f00
 }
 
@@ -1105,7 +1142,7 @@ body.dark-mode .minimalism-button.fully-filled:hover {
 
 /* 夜间模式下的信息框内部文字样式 */
 body.dark-mode .info-box p,
-body.dark-mode .info-box h3{
+body.dark-mode .info-box h3 {
     color: #e0e0e0;
 }
 
@@ -1180,12 +1217,19 @@ body.dark-mode table td {
     white-space: pre-wrap;
 }
 
-.independent-code-inline
-{
+.independent-code-inline {
     overflow-wrap: break-word;
     white-space: pre-wrap;
     padding: 10px 10px;
 }
+
+.independent-scrollable-code-inline {
+    white-space: pre;
+    padding: 10px 10px;
+    overflow-x: auto;
+
+}
+
 
 /* 媒体查询 */
 
@@ -1229,6 +1273,6 @@ body.dark-mode table td {
     /* 针对accessibility-section的调整 */
     .accessibility-section {
         max-width: none;
-        padding: 15px 20px;/* 移除最大宽度限制 */
+        padding: 15px 20px; /* 移除最大宽度限制 */
     }
 }

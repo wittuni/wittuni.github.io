@@ -52,7 +52,7 @@
     "clear": "清空终端",
     "reset": "重置环境",
     "maximize": "最大化终端",
-    "description": "(1) Ctrl+Enter 以执行\n(2) 请勿执行耗时代码\n(3) 加载库：\nimport pyodide_js\nawait pyodide_js.loadPackage('package_name')"
+    "description": "(1) Ctrl+Enter 以执行\n(2) 请勿执行耗时代码\n(3) 加载库： \nimport micropip\nmicropip.install(\"package_name\")"
   },
   "confetti": "彩纸",
   "accessibility": "辅助功能与个性化",

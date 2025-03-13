@@ -51,7 +51,7 @@
     "clear": "Clear terminal",
     "reset": "Reset env",
     "maximize": "Maximize terminal",
-    "description": "(1) Use Ctrl+Enter to execute\n(2) Avoid running heavy code.\n(3) To load packages:\nimport pyodide_js\nawait pyodide_js.loadPackage('package_name')"
+    "description": "(1) Use Ctrl+Enter to execute\n(2) Avoid running heavy code.\n(3) To load packages: \nimport micropip\nmicropip.install(\"package_name\")"
   },
   "confetti": "Confetti",
   "accessibility": "Accessibility & Customization",
