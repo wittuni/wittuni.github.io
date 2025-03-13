@@ -45,6 +45,13 @@
     "description": "Report issues or suggestions here:",
     "redirect": "(Here)"
   },
+  "terminal": {
+    "title": "Mini Terminal",
+    "execute": "Execute",
+    "clear": "Clear terminal",
+    "reset": "Reset env",
+    "maximize": "Maximize terminal"
+  },
   "confetti": "Confetti",
   "accessibility": "Accessibility & Customization",
   "download": "Download",

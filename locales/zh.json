@@ -46,6 +46,13 @@
     "description": "如果你发现本网站有漏洞，请在这里提出：",
     "redirect": "（这里）"
   },
+  "terminal": {
+    "title": "迷你终端",
+    "execute": "执行",
+    "clear": "清空终端",
+    "reset": "重置环境",
+    "maximize": "最大化终端"
+  },
   "confetti": "彩纸",
   "accessibility": "辅助功能与个性化",
   "download": "下载",

@@ -32,6 +32,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /*height: fit-content; !* 适应内容高度 *!*/
 }
 
 .card:hover {
@@ -44,23 +45,45 @@ body {
 }
 
 /* 卡片网格布局 */
+/*.card-grid {*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));*/
+/*    gap: 20px;*/
+/*    margin-top: 40px;*/
+/*}*/
+
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: auto;
     gap: 20px;
     margin-top: 40px;
 }
 
-.hero-card {
-    position: relative;
-    padding-bottom: 70px; /* 增加底部内边距，为按钮留出空间 */
-    min-width: 250px; /* 添加最小宽度，与其他卡片保持一致 */
-    box-sizing: border-box; /* 确保padding不会增加总宽度 */
+/* 创建不同尺寸的卡片类 */
+.card-wide {
+    grid-column: span 2; /* 横跨两列 */
 }
 
-.hero-card:hover {
-    transform: None;
+.card-full {
+    grid-column: 1 / -1; /* 从第一列跨到最后一列 */
 }
+
+/* 创建指定高度的卡片，避免被拉伸 */
+.card-fixed-height {
+    align-self: start; /* 让卡片从顶部开始对齐，不会被拉伸 */
+}
+
+/*.hero-card {*/
+/*    position: relative;*/
+/*    padding-bottom: 70px; !* 增加底部内边距，为按钮留出空间 *!*/
+/*    min-width: 250px; !* 添加最小宽度，与其他卡片保持一致 *!*/
+/*    box-sizing: border-box; !* 确保padding不会增加总宽度 *!*/
+/*}*/
+
+/*.hero-card:hover {*/
+/*    transform: None;*/
+/*}*/
 
 .accessibility-title {
     display: flex;
@@ -563,9 +586,9 @@ body {
 
 .float-left {
     float: left;
-    max-width: 25%;
+    max-width: 100%;
     margin-right: 10px;
-    margin-left: 10%;
+    margin-left: 23%;
 }
 
 /*.float-center {*/
@@ -578,7 +601,7 @@ body {
     float: right;
     max-width: 100%;
     margin-left: 10px;
-    margin-right: 15%;
+    margin-right: 23%;
 }
 
 .mirror-flip {
@@ -602,7 +625,7 @@ body {
 /*    margin-top: 15px;*/
 /*}*/
 
-.button-link {
+.minimalism-button {
     display: inline-block;
     padding: 6px 14px;
     background: transparent;
@@ -622,14 +645,14 @@ body {
     transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.button-link:hover {
+.minimalism-button:hover {
     background-color: rgba(0, 0, 0, 0.03);
-    transform: translateY(-1px);
+    /*transform: translateY(-1px);*/
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
 
 /* 用于背景动画的伪元素 */
-.button-link::before {
+.minimalism-button::before {
     content: '';
     position: absolute;
     top: 0;
@@ -643,18 +666,18 @@ body {
 }
 
 /* 半填充状态 */
-.button-link.half-filled::before {
+.minimalism-button.half-filled::before {
     transform: translateX(50%);
 }
 
 /* 完全填充状态 */
-.button-link.fully-filled::before {
+.minimalism-button.fully-filled::before {
     transform: translateX(100%);
 }
 
 /* 防止悬停效果覆盖填充动画 */
-.button-link.half-filled:hover,
-.button-link.fully-filled:hover {
+.minimalism-button.half-filled:hover,
+.minimalism-button.fully-filled:hover {
     background-color: transparent;
 }
 
@@ -726,7 +749,6 @@ input:checked + .slider:before {
     transform: translateX(22px);
 }
 
-/* 悬停效果 */
 .slider:hover {
     opacity: 0.9;
 }
@@ -737,6 +759,124 @@ input:checked + .slider:before {
     /*flex-direction: column;*/
     gap: 15px;
 }
+
+.python-terminal-card {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-bottom: 16px;
+}
+
+/* 终端显示区域样式 */
+.terminal-container {
+    position: relative;
+    height: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #3f3f3f; /* Zenburn背景色 */
+}
+
+.python-terminal {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 12px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #dcdccc; /* Zenburn前景色 */
+    white-space: pre-wrap;
+    box-sizing: border-box;
+}
+
+/* 代码编辑区域样式 */
+.code-editor-container {
+    position: relative;
+    height: 150px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* 编辑器样式会被CodeMirror覆盖，这里设置容器样式 */
+.CodeMirror {
+    height: 100% !important;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    border-radius: 8px;
+}
+
+.terminal-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;  /* 按钮和标签之间添加间距 */
+    padding-bottom: 10px;
+}
+
+.run-btn {
+    border-color: #7f9f7f;
+}
+
+.clear-btn {
+    border-color: #dca3a3;
+}
+
+.clear-btn.minimalism-button::before,
+.minimalism-button.your-button-class::before {
+    background: linear-gradient(90deg, rgba(255, 182, 193, 0.8
+    ), rgba(199, 21, 133, 0.3));}
+
+.reset-btn {
+    border-color: #94bff3;
+}
+
+.reset-btn.minimalism-button::before,
+.minimalism-button.your-button-class::before {
+    background: linear-gradient(90deg, rgba(100, 177, 215, 0.6), rgba(39, 83, 148, 0.3));}
+
+
+.terminal-output {
+    margin: 2px 0;
+}
+
+.terminal-error {
+    color: #dca3a3;
+}
+
+.terminal-success {
+    color: #9fc59f;
+    font-weight: bold;
+}
+
+.terminal-input {
+    color: #94bff3;
+}
+
+.terminal-info{
+    color: #efe3be;
+    font-weight: bold;
+}
+
+/* 终端滚动条样式 */
+.python-terminal::-webkit-scrollbar {
+    width: 8px;
+}
+
+.python-terminal::-webkit-scrollbar-track {
+    background: #4f4f4f;
+}
+
+.python-terminal::-webkit-scrollbar-thumb {
+    background: #6f6f6f;
+    border-radius: 4px;
+}
+
+.python-terminal::-webkit-scrollbar-thumb:hover {
+    background: #7f7f7f;
+}
+
+
 
 /* 选择器 */
 

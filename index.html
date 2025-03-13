@@ -5,50 +5,97 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-i18n="pageTitle">tttiw.github.io</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
 </head>
 
 <body>
 <div class="container">
-    <!-- Main Card -->
-    <div class="card hero-card">
-        <button
-                type="button"
-                class="action-button"
-                tabindex="0"
-                data-i18n="confetti">
-        </button>
-
-        <h2 data-i18n="title"></h2>
-        <p data-i18n="mainText"></p>
-
-        <!-- Accessibility Section -->
-        <div class="accessibility-section">
-            <p data-i18n="accessibility"></p>
-            <div class="language-selector-wrapper">
-                <label>
-                    <select id="language-selector"
-                            class="language-selector">
-                        <option value="en" data-i18n="languages.english">English</option>
-                        <option value="zh" data-i18n="languages.chinese">现代汉语</option>
-                    </select>
-                </label>
-                <div class="select-arrow"></div>
-            </div>
-
-            <!-- 颜色选择器 -->
-            <div class="color-theme-selector">
-                <button class="color-button color-button-red" data-color="#4b2328"></button>
-                <button class="color-button color-button-yellow" data-color="#a86800"></button>
-                <button class="color-button color-button-green" data-color="#395a57"></button>
-                <button class="color-button color-button-lavender" data-color="#4e4466"></button>
-                <button class="color-button color-button-dark" data-color="#1a1a1a"></button>
-            </div>
-
-        </div>
-    </div>
 
     <div class="card-grid">
+
+        <div class="card card-wide">
+            <button
+                    type="button"
+                    class="action-button"
+                    tabindex="0"
+                    data-i18n="confetti">
+            </button>
+
+            <h2 data-i18n="title"></h2>
+            <p data-i18n="mainText"></p>
+
+            <!-- Accessibility Section -->
+            <div class="accessibility-section">
+                <p data-i18n="accessibility"></p>
+                <div class="language-selector-wrapper">
+                    <label>
+                        <select id="language-selector"
+                                class="language-selector">
+                            <option value="en" data-i18n="languages.english">English</option>
+                            <option value="zh" data-i18n="languages.chinese">现代汉语</option>
+                        </select>
+                    </label>
+                    <div class="select-arrow"></div>
+                </div>
+
+                <!-- 颜色选择器 -->
+                <div class="color-theme-selector">
+                    <button class="color-button color-button-red" data-color="#4b2328"></button>
+                    <button class="color-button color-button-yellow" data-color="#a86800"></button>
+                    <button class="color-button color-button-green" data-color="#395a57"></button>
+                    <button class="color-button color-button-lavender" data-color="#4e4466"></button>
+                    <button class="color-button color-button-dark" data-color="#1a1a1a"></button>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Python终端卡片 -->
+        <div class="card python-terminal-card card-wide">
+            <h3 data-i18n="terminal.title">Terminal</h3>
+            <div class="terminal-container">
+                <div id="python-terminal" class="python-terminal"></div>
+            </div>
+
+            <div class="code-editor-container">
+                <textarea id="python-code-editor"></textarea>
+            </div>
+
+            <div class="terminal-controls">
+
+                <button id="run-code-btn" class="minimalism-button run-btn">
+                    <span data-i18n="terminal.execute"></span>
+                </button>
+
+                <button id="clear-terminal-btn"
+                        class="minimalism-button clear-btn"
+                        require-confirmation="true"
+                >
+                    <span data-i18n="terminal.clear"></span>
+                </button>
+
+                <button id="reset-env-btn"
+                        class="minimalism-button reset-btn"
+                        require-confirmation="true"
+                >
+                    <span data-i18n="terminal.reset"></span>
+                </button>
+
+                <button id="maximize-terminal-btn" class="minimalism-button">
+                    <span data-i18n="terminal.maximize"></span>
+                </button>
+
+            </div>
+
+            <div class="tags-container">
+                <span class="tag tag-purple">Pyodide</span>
+                <span class="tag tag-purple">CodeMirror</span>
+                <span class="tag tag-blue">Beta</span>
+            </div>
+        </div>
+
+
+
 
         <div class="card">
             <!--      <div class="glass-image-container">-->
@@ -60,8 +107,9 @@
             <h3 data-i18n="weixin.title"></h3>
             <p data-i18n="weixin.description"></p>
 
-            <button class="button-link initial-state"
+            <button class="minimalism-button initial-state"
                     data-target-url="https://mp.weixin.qq.com/s/b6wxfJ-ndgf0hpJa0fnrGQ"
+                    require-confirmation="true"
             >
                 <span data-i18n="visit"></span>
             </button>
@@ -71,6 +119,8 @@
             </div>
 
         </div>
+
+
 
         <div class="card image-card">
             <!-- 图片背景 -->
@@ -82,8 +132,9 @@
                 <h3 data-i18n="ws_calc.title"></h3>
                 <p data-i18n="ws_calc.description"></p>
 
-                <button class="button-link initial-state"
+                <button class="minimalism-button initial-state"
                         data-target-url="https://github.com/tttiw/witt-s-calculator/releases/tag/Beta-1.0"
+                        require-confirmation="true"
                 >
                     <span data-i18n="download"></span>
                 </button>
@@ -116,11 +167,11 @@
             </div>
         </div>
 
-        <div class="card">
+        <div class="card card-wide">
             <h3 data-i18n="about_me.title"></h3>
 
             <div class="image-container">
-                <img src="images/Temperate_Cow.png" class="float-left mirror-flip" alt="minecraft cow">
+                <img src="images/Cute_Fishron_Mount.webp" class="float-left" alt="cute fishron">
                 <img src="images/Cute_Fishron_Mount.webp" class="float-right mirror-flip" alt="cute fishron">
             </div>
             <div style="clear: both;"></div>
@@ -169,19 +220,31 @@
 
             <div class="buttons-container">
 
-                <button class="button-link initial-state" data-target-url="https://zeyi2.github.io">
+                <button class="minimalism-button initial-state"
+                        data-target-url="https://zeyi2.github.io"
+                        require-confirmation="true"
+                >
                     <span>Mitchell's Homepage</span>
                 </button>
 
-                <button class="button-link initial-state" data-target-url="https://example.com/">
+                <button class="minimalism-button initial-state"
+                        data-target-url="https://example.com/"
+                        require-confirmation="true"
+                >
                     <span>Placeholder 1</span>
                 </button>
 
-                <button class="button-link initial-state" data-target-url="https://example.com/">
+                <button class="minimalism-button initial-state"
+                        data-target-url="https://example.com/"
+                        require-confirmation="true"
+                >
                     <span>PH2</span>
                 </button>
 
-                <button class="button-link initial-state" data-target-url="original_website.html">
+                <button class="minimalism-button initial-state"
+                        data-target-url="original_website.html"
+                        require-confirmation="true"
+                >
                     <span>???</span>
                 </button>
 
@@ -192,8 +255,10 @@
         <div class="card">
             <h3 data-i18n="issues.title"></h3>
             <p data-i18n="issues.description"></p>
-            <button class="button-link initial-state"
-                    data-target-url="https://github.com/tttiw/tttiw.github.io/issues">
+            <button class="minimalism-button initial-state"
+                    data-target-url="https://github.com/tttiw/tttiw.github.io/issues"
+                    require-confirmation="true"
+            >
                 <span data-i18n="issues.redirect"></span>
             </button>
         </div>
@@ -218,10 +283,24 @@
     </div>
 </div>
 
-<script src="js/i18n.js"></script>
-<script src="js/theme_customization.js"></script>
-<script src="js/redirect_button.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/zenburn.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/python/python.min.js"></script>
+
+<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+<!--  Notes: >0.25.1 PythonError.message 为 undefined  -->
+<script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
+
+<script src="js/theme-customization.js"></script>
+<script src="js/button-confirmation-effect.js"></script>
+<script src="js/button-navigation.js"></script>
 <script src="js/confetti.js"></script>
+<script src="js/python-terminal.js"></script>
+<script src="js/i18n.js"></script>
 
 </body>
 
