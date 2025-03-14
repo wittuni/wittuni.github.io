@@ -176,9 +176,8 @@
 
 /* 行号区域样式 */
 .CodeMirror-gutters {
-    background: #2D2D2D !important;
+    /*background: #2D2D2D !important;*/
     border-right: none !important;
-    /*border-right: 2px solid #555 !important;*/
 }
 
 .CodeMirror-linenumber {

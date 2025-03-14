@@ -1194,11 +1194,11 @@ body.dark-mode .reset-btn {
 }
 
 body.dark-mode .clear-btn.minimalism-button::before {
-    background: #8c2525
+    background: linear-gradient(45deg, #8c2525, #a63030);
 }
 
 body.dark-mode .reset-btn.minimalism-button::before {
-    background: #7d5f00
+    background: linear-gradient(45deg, #7d5f00, #927000);
 }
 
 body.dark-mode .minimalism-button.half-filled:hover,
