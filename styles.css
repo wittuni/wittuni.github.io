@@ -1295,10 +1295,6 @@ body.dark-mode table td {
 /* 媒体查询 */
 
 @media (max-width: 767px) {
-    .container {
-        width: 95%;
-        padding: 10px;
-    }
 
     .card-grid {
         grid-template-columns: 1fr;
