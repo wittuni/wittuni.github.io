@@ -1314,6 +1314,9 @@ body.dark-mode table td {
     width: 100%;
 }
 
+.no-wrap {
+    white-space: nowrap;
+}
 
 /* 媒体查询 */
 
