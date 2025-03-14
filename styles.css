@@ -46,12 +46,16 @@ body {
     color: #e0e0e0;
 }
 
+.center-text {
+    text-align: center;
+}
+
 .site-icon-container img.site-icon {
     display: block;
 }
 
 .container {
-    width: 90%;
+    width: 85%;
     margin: auto;
     padding: 10px;
 }
@@ -59,13 +63,19 @@ body {
 .card {
     position: relative;
     background-color: #fff;
-    padding: 20px;
-    padding-bottom: 50px;
+    padding: 20px 20px 60px;
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     /*height: fit-content; !* 适应内容高度 *!*/
+
+    width: auto;
+    /*padding: 15px;*/
+    /*padding-bottom: 60px;*/
+    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow-x: hidden;
 }
 
 .theme-card {
@@ -140,7 +150,7 @@ body {
     display: flex;
     flex-direction: column;
     background-color: #f8f9fa;
-    padding: 20px 30px;
+    padding: 15px 20px;
     border-radius: 12px;
     margin-top: 20px;
     margin-bottom: 10px;
@@ -197,9 +207,6 @@ body {
 }
 
 .action-button {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
     background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
     color: white;
     border: none;
@@ -210,6 +217,11 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
     font-family: inherit;
+    margin-top: 10px;
+    /* 靠右 */
+    /*margin-left: auto;*/
+    /*display: block;*/
+    width: 100%;
 }
 
 .action-button:active {
@@ -280,14 +292,12 @@ body {
     /*box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);*/
 }
 
-/* 桌面端保留悬停效果 */
 @media (min-width: 768px) {
     .image-card:hover .card-img-background {
         transform: scale(1.15);
     }
 }
 
-/* 移动端禁用悬停效果 */
 @media (max-width: 767px) {
     .image-card:hover .card-img-background {
         transform: scale(1.1);
@@ -415,19 +425,19 @@ body {
 }
 
 /* 如果卡片在网格布局中，确保它们高度一致 */
-@media (min-width: 768px) {
-    .card-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 20px;
-    }
+/*@media (min-width: 768px) {*/
+/*    .card-grid {*/
+/*        display: grid;*/
+/*        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));*/
+/*        gap: 20px;*/
+/*    }*/
 
-    .card-grid > * {
-        height: auto;
-        display: flex;
-        flex-direction: column;
-    }
-}
+/*    .card-grid > * {*/
+/*        height: auto;*/
+/*        display: flex;*/
+/*        flex-direction: column;*/
+/*    }*/
+/*}*/
 
 .color-theme-selector {
     display: flex;
@@ -626,15 +636,22 @@ body.dark-mode .code-inline::-webkit-scrollbar-thumb:hover {
 }
 
 .image-container {
-    width: 100%;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.image-container img {
+    max-width: 150px;
+    height: auto;
 }
 
 .float-left {
     float: left;
     max-width: 100%;
     margin-right: 10px;
-    margin-left: 23%;
+    margin-left: 20%;
 }
 
 /*.float-center {*/
@@ -647,7 +664,7 @@ body.dark-mode .code-inline::-webkit-scrollbar-thumb:hover {
     float: right;
     max-width: 100%;
     margin-left: 10px;
-    margin-right: 23%;
+    margin-right: 20%;
 }
 
 .mirror-flip {
@@ -861,7 +878,7 @@ input:checked + .setting-slider:before {
     flex-wrap: wrap;
     gap: 8px;
     margin-bottom: 20px; /* 按钮和标签之间添加间距 */
-    padding-bottom: 10px;
+    padding-bottom: 14px;
 }
 
 .run-btn {
@@ -1232,7 +1249,7 @@ body.dark-mode .tag-green {
 
 body.dark-mode .tag-red {
     background-color: #8b0000;
-    color: #ffcdd2;
+    color: #ef9090;
 }
 
 body.dark-mode .tag-purple {
@@ -1287,12 +1304,14 @@ body.dark-mode table td {
     overflow-wrap: break-word;
     white-space: pre-wrap;
     padding: 10px 10px;
+    width: 100%;
 }
 
 .independent-scrollable-code-inline {
     white-space: pre;
     padding: 10px 10px;
     overflow-x: auto;
+    width: 100%;
 }
 
 
@@ -1302,7 +1321,6 @@ body.dark-mode table td {
 
     .card-grid {
         grid-template-columns: 1fr;
-        gap: 15px; /* 减少间隙 */
     }
 
     .card-wide {
@@ -1310,12 +1328,12 @@ body.dark-mode table td {
     }
 
     .card {
-        width: auto;
-        padding: 15px;
-        padding-bottom: 60px;
-        overflow-wrap: break-word;
-        word-break: break-word;
-        overflow-x: hidden;
+        /*width: auto;*/
+        /*padding: 15px;*/
+        /*padding-bottom: 60px;*/
+        /*overflow-wrap: break-word;*/
+        /*word-break: break-word;*/
+        /*overflow-x: hidden;*/
     }
 
     .card img,
@@ -1331,10 +1349,9 @@ body.dark-mode table td {
         font-size: 0.85em;
     }
 
-    /* 针对accessibility-section的调整 */
     .accessibility-section {
         /*max-width: none;*/
-        padding: 15px 20px; /* 移除最大宽度限制 */
+        padding: 15px 20px;
     }
 
     .independent-code-inline {

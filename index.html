@@ -11,7 +11,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <meta name="theme-color" content="#4b2328" />
+    <meta name="theme-color" content="#4b2328"/>
 
 </head>
 
@@ -29,19 +29,13 @@
 
 
         <div class="card">
-            <button
-                    type="button"
-                    class="action-button"
-                    tabindex="0"
-                    data-i18n="confetti">
-            </button>
 
-            <h2 data-i18n="settings"></h2>
+            <h2 class="center-text" data-i18n="settings"></h2>
             <p data-i18n="mainText"></p>
 
             <!-- Accessibility Section -->
             <div class="accessibility-section">
-                <p data-i18n="customization"></p>
+                <p class="center-text" data-i18n="customization"></p>
                 <div class="language-selector-wrapper">
                     <label>
                         <select id="language-selector"
@@ -78,11 +72,17 @@
                 </div>
 
             </div>
+
+            <button
+                    type="button"
+                    class="action-button"
+                    data-i18n="confetti">
+            </button>
         </div>
 
         <!-- Python终端 -->
         <div class="card python-terminal-card card-wide">
-            <h3 data-i18n="terminal.title">Terminal</h3>
+            <h2 class="center-text" data-i18n="terminal.title"></h2>
             <p>
                 <span class="code-inline independent-scrollable-code-inline"
                       data-i18n="terminal.description"></span>
@@ -199,15 +199,16 @@
         </div>
 
         <div class="card card-wide">
-            <h3 data-i18n="about_me.title"></h3>
+            <h2 class="center-text" data-i18n="about_me.title"></h2>
 
             <div class="image-container">
-                <img src="images/Cute_Fishron_Mount.webp" class="float-left" alt="cute fishron">
-                <img src="images/Cute_Fishron_Mount.webp" class="float-right mirror-flip" alt="cute fishron">
+                <img src="images/Cute_Fishron_Mount.webp" alt="cute fishron">
+                <img src="images/Cute_Fishron_Mount.webp" class="mirror-flip" alt="cute fishron">
             </div>
-            <div style="clear: both;"></div>
 
-            <p data-i18n="about_me.description"></p>
+<!--            <div style="clear: both;"></div>-->
+
+            <p class="center-text" data-i18n="about_me.description"></p>
             <table class="themed-table">
                 <thead>
 
@@ -244,7 +245,7 @@
         </div>
 
         <div class="card">
-            <h3 data-i18n="links.title"></h3>
+            <h2 data-i18n="links.title"></h2>
             <p><span class="code-inline">placeholder@placeholder.org</span><span class="code-inline">placeholderplaceholderplaceholderplaceholderplaceholderplaceholder@placeholder.org</span>
             </p>
             <div class="modern-divider"></div>
@@ -284,7 +285,7 @@
         </div>
 
         <div class="card">
-            <h3 data-i18n="issues.title"></h3>
+            <h2 data-i18n="issues.title"></h2>
             <p data-i18n="issues.description"></p>
             <button class="minimalism-button initial-state"
                     data-target-url="https://github.com/tttiw/tttiw.github.io/issues"
@@ -295,7 +296,7 @@
         </div>
 
         <div class="card">
-            <h3 data-i18n="credits.title"></h3>
+            <h2 data-i18n="credits.title"></h2>
             <p>
                 <span class="code-inline independent-code-inline"
                       data-i18n="credits.description"

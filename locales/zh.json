@@ -1,13 +1,13 @@
 {
   "title": "tttiw.github.io",
-  "mainText": "想不出这里要写什么。那就祝你今天过得开心 :)",
+  "mainText": "“来自大脑某个遥远角落的电信号。”",
   "weixin": {
     "title": "Illusory Dept.",
     "description": "我的微信公众号，是一项个人项目。还不确定该怎么做。"
   },
   "ws_calc": {
     "title": "witt's Calculator (Beta)",
-    "description": "极简计算器。支持 sympy 和 LaTeX 语法。"
+    "description": "极简计算器。支持 sympy 和 LaTeX 句法。"
   },
   "ws_calc_uu": {
     "title": "witt's Calculator - 更新计划",
@@ -20,7 +20,7 @@
   },
   "about_me":{
     "title": "Me!",
-    "description": "- 'What day is it today?'\n- 'It's today.'\n- 'Oh. My favourite day.'",
+    "description": "“今天是哪一天呢？”\n“今天是今天。”\n“喔。我最喜欢的一天。”",
     "fav_table": {
       "l1r1": "我最喜欢的...",
       "l1r2": "是...",
@@ -39,11 +39,11 @@
   },
   "credits": {
     "title": "鸣谢",
-    "description": "By tttiw.\n\n该网页的图标由3s.绘制。\n====================\n最后编辑于：2025/3\nv9.3"
+    "description": "由 tttiw 制作。\n网站图标由 3s. 绘制。\n====================\n最后编辑于：2025/3\nv9.5"
   },
   "issues": {
     "title": "漏洞汇报",
-    "description": "如果你发现本网站有漏洞，请在这里提出：",
+    "description": "在这里反馈网站漏洞或建议：",
     "redirect": "（这里）"
   },
   "terminal": {
@@ -52,7 +52,7 @@
     "clear": "清空终端",
     "reset": "重置环境",
     "maximize": "最大化终端",
-    "description": "(1) Ctrl+Enter 以执行\n(2) 请勿执行耗时代码\n(3) 加载库： \nimport micropip\nmicropip.install(\"package_name\")"
+    "description": "(1) Ctrl + Enter 以执行\n(2) 请勿执行耗时代码\n(3) # 加载库： \nimport micropip\nmicropip.install(\"package_name\")"
   },
   "confetti": "彩纸",
   "settings": "设置",
