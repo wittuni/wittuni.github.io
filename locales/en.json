@@ -38,7 +38,7 @@
   },
   "credits": {
     "title": "Credits",
-    "description": "By tttiw.\n\nThe app icon for witt's Calculator is made by 3s..\n====================\nLast edit: 2025/3\nv9.2"
+    "description": "By tttiw.\nThe icon of this site by 3s.\n====================\nLast edit: 2025/3\nv9.3"
   },
   "issues": {
     "title": "Report Issues",
@@ -54,7 +54,8 @@
     "description": "(1) Use Ctrl+Enter to execute\n(2) Avoid running heavy code.\n(3) To load packages: \nimport micropip\nmicropip.install(\"package_name\")"
   },
   "confetti": "Confetti",
-  "accessibility": "Accessibility & Customization",
+  "settings": "Settings",
+  "customization": "Customization",
   "download": "Download",
   "visit": "Visit",
   "unlimited_confetti": "Unlimited Confetti",

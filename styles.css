@@ -17,10 +17,43 @@ body {
     font-size: 18px;
 }
 
+.site-icon {
+    object-fit: contain;
+    aspect-ratio: 1/1;
+    width: auto;
+    max-width: 100%;
+    box-sizing: border-box; /* 确保padding和border不会增加总宽度 */
+}
+
+@media (max-width: 767px) {
+    .site-icon {
+        width: 300px; /* 设置固定宽度而非max-width */
+        /*margin-left: auto;*/
+        /*margin-right: auto;*/
+    }
+}
+
+.site-icon-container {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+.main-title-text {
+    text-align: center;
+    color: #e0e0e0;
+}
+
+.site-icon-container img.site-icon {
+    display: block;
+}
+
 .container {
-    width: 80%;
+    width: 90%;
     margin: auto;
-    padding: 20px;
+    padding: 10px;
 }
 
 .card {
@@ -33,6 +66,10 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     /*height: fit-content; !* 适应内容高度 *!*/
+}
+
+.theme-card {
+    background-color: #4a1913;
 }
 
 .card:hover {
@@ -1084,6 +1121,10 @@ body.dark-mode .card {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
+body.dark-mode .theme-card {
+    background-color: #4a1913;
+}
+
 body.dark-mode .accessibility-section {
     background-color: #2d2d2d;
     border-color: #3a3a3a;
@@ -1124,7 +1165,6 @@ body.dark-mode .info-box-title {
 }
 
 body.dark-mode .minimalism-button {
-
     color: #e0e0e0;
     border-color: #555;
 }

@@ -6,6 +6,11 @@
     <title data-i18n="pageTitle">tttiw.github.io</title>
     <link rel="stylesheet" href="styles.css">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
 </head>
 
 <body>
@@ -13,7 +18,15 @@
 
     <div class="card-grid">
 
-        <div class="card card-wide">
+        <div class="card theme-card">
+            <div class="site-icon-container">
+                <img src="images/tgio_s.png" alt="Site icon" class="site-icon">
+            </div>
+            <h2 class="main-title-text" data-i18n="title"></h2>
+        </div>
+
+
+        <div class="card">
             <button
                     type="button"
                     class="action-button"
@@ -21,12 +34,12 @@
                     data-i18n="confetti">
             </button>
 
-            <h2 data-i18n="title"></h2>
+            <h2 data-i18n="settings"></h2>
             <p data-i18n="mainText"></p>
 
             <!-- Accessibility Section -->
             <div class="accessibility-section">
-                <p data-i18n="accessibility"></p>
+                <p data-i18n="customization"></p>
                 <div class="language-selector-wrapper">
                     <label>
                         <select id="language-selector"
@@ -114,8 +127,6 @@
         </div>
 
 
-
-
         <div class="card">
             <!--      <div class="glass-image-container">-->
             <!--        <img src="images/witt-s-calculator.jpg" class="card-image">-->
@@ -138,7 +149,6 @@
             </div>
 
         </div>
-
 
 
         <div class="card image-card">

@@ -39,7 +39,7 @@
   },
   "credits": {
     "title": "鸣谢",
-    "description": "By tttiw.\n\nwitt's Calculator的图标由3s.绘制。\n====================\n最后编辑于：2025/3\nv9.2"
+    "description": "By tttiw.\n\n该网页的图标由3s.绘制。\n====================\n最后编辑于：2025/3\nv9.3"
   },
   "issues": {
     "title": "漏洞汇报",
@@ -55,7 +55,8 @@
     "description": "(1) Ctrl+Enter 以执行\n(2) 请勿执行耗时代码\n(3) 加载库： \nimport micropip\nmicropip.install(\"package_name\")"
   },
   "confetti": "彩纸",
-  "accessibility": "辅助功能与个性化",
+  "settings": "设置",
+  "customization": "个性化",
   "download": "下载",
   "visit": "访问",
   "unlimited_confetti": "无限彩纸",
