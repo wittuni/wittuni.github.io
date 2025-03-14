@@ -1111,7 +1111,7 @@ body.dark-mode .theme-label {
 
 /* 夜间模式样式 */
 body.dark-mode {
-    background-color: #121212;
+    /*background-color: #121212;*/
     color: #e0e0e0;
 }
 
