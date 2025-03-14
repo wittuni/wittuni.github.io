@@ -9,6 +9,13 @@ document.addEventListener('DOMContentLoaded', function () {
             this.classList.add('active');
             const color = this.getAttribute('data-color');
             document.body.style.backgroundColor = color;
+
+            // 更新 meta theme-color
+            const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+            if (metaThemeColor) {
+                metaThemeColor.setAttribute('content', color);
+            }
+
             localStorage.setItem('preferredTheme', color);
         });
     });
@@ -16,6 +23,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const savedTheme = localStorage.getItem('preferredTheme');
     if (savedTheme) {
         document.body.style.backgroundColor = savedTheme;
+
+        // 更新 meta theme-color
+        const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+        if (metaThemeColor) {
+            metaThemeColor.setAttribute('content', savedTheme);
+        }
+
         // 找到对应按钮并激活
         colorButtons.forEach(btn => {
             if (btn.getAttribute('data-color') === savedTheme) {
