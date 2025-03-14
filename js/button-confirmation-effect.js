@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (clickState === 0) {
                 // 第一次点击：半填充状态
                 button.classList.remove('initial-state');
+                button.classList.add('transparent-bg');
                 button.classList.add('half-filled');
                 clickState = 1;
             } else if (clickState === 1) {
@@ -26,24 +27,34 @@ document.addEventListener('DOMContentLoaded', function () {
                 isTransitioning = true;
 
                 setTimeout(function () {
-                    button.classList.remove('fully-filled');
-                    button.classList.add('initial-state');
-                    clickState = 0;
+                    returnToInitialState(button);
 
                     // 监听过渡动画结束事件
-                    const transitionEndHandler = function () {
-                        // 移除事件监听器
-                        button.removeEventListener('transitionend', transitionEndHandler);
-                        isTransitioning = false;
+                    // const transitionEndHandler = function () {
+                    //     // 移除事件监听器
+                    //     button.removeEventListener('transitionend', transitionEndHandler);
+                    //     button.classList.remove('transparent-bg');
+                    //     isTransitioning = false;
+                    //
+                    //     // 确认完成后，触发一个自定义事件，表示确认完成
+                    //     const confirmedEvent = new CustomEvent('confirmation-complete', {
+                    //         bubbles: true,
+                    //         detail: { button: button }
+                    //     });
+                    //     button.dispatchEvent(confirmedEvent);
+                    // };
+                    //
+                    // button.addEventListener('transitionend', transitionEndHandler);
 
-                        // 确认完成后，触发一个自定义事件，表示确认完成
+                    setTimeout(function () {
+                        isTransitioning = false;
                         const confirmedEvent = new CustomEvent('confirmation-complete', {
                             bubbles: true,
-                            detail: { button: button }
+                            detail: {button: button}
                         });
                         button.dispatchEvent(confirmedEvent);
-                    };
-                    button.addEventListener('transitionend', transitionEndHandler);
+                    }, 800);
+
                 }, 700);
             }
         });
@@ -52,13 +63,24 @@ document.addEventListener('DOMContentLoaded', function () {
         document.addEventListener('click', function (event) {
             if (clickState === 1 && !button.contains(event.target)) {
                 // 半填充状态且点击按钮外部时重置
-                button.classList.remove('half-filled');
-                button.classList.add('initial-state');
-                clickState = 0;
+                returnToInitialState(button);
             }
         });
+
+        function returnToInitialState(button) {
+            button.classList.remove('half-filled');
+            button.classList.remove('fully-filled');
+            button.classList.add('initial-state');
+            clickState = 0;
+            setTimeout(function () {
+                button.classList.remove('transparent-bg');
+            }, 700)
+        }
+
     });
 });
+
+
 
 function addOnButtonClickListener(button, listener) {
     const requireConfirmation = button.getAttribute('require-confirmation') === 'true';

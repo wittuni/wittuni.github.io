@@ -9,134 +9,11 @@ document.addEventListener('DOMContentLoaded', function () {
     // 如果没有找到相关元素，直接返回
     if (!terminal || !runButton) return;
 
-    const customStyle = document.createElement('style');
-    customStyle.textContent = `
-    /* 弹出窗口样式 */
-    .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: rgba(0,0,0,0);
-    transition: background-color 0.2s ease;
-}
+    const customStyleLink = document.createElement('link');
+    customStyleLink.rel = 'stylesheet';
+    customStyleLink.href = 'mini_terminal.css'; // 替换为你的 CSS 文件路径
+    document.head.appendChild(customStyleLink);
 
-.modal.visible {
-    background-color: rgba(0,0,0,0.4);
-}
-
-.modal-content {
-    background-color: #1E1E1E;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #444;
-    width: 80%;
-    height: 80%;
-    border-radius: 5px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    transform: scale(0.97);
-    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.modal.visible .modal-content {
-    opacity: 1;
-    transform: scale(1);
-}
-
-.modal-header {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 15px;
-    position: relative;
-}
-
-.modal-header h2 {
-    margin: 0;
-    color: #fff;
-    text-align: center;
-}
-
-.modal-terminal {
-    flex: 1;
-    overflow: auto;
-    background-color: #1E1E1E;
-    color: #fff;
-    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
-    padding: 10px;
-    box-sizing: border-box;
-    white-space: pre-wrap;
-    border: 1px solid #444;
-    scrollbar-width: thin;
-    scrollbar-color: #555 #1E1E1E;
-}
-
-/* 为Webkit浏览器定制滚动条样式 */
-.modal-terminal::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-}
-
-.modal-terminal::-webkit-scrollbar-track {
-    background: #2D2D2D;
-    border-radius: 4px;
-}
-
-.modal-terminal::-webkit-scrollbar-thumb {
-    background: #555;
-    border-radius: 4px;
-    transition: background 0.2s ease;
-}
-
-.modal-terminal::-webkit-scrollbar-thumb:hover {
-    background: #777;
-}
-
-.modal-terminal::-webkit-scrollbar-corner {
-    background: #2D2D2D;
-}
-
-.close-modal {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    border: 1px solid #aaa;
-    background-color: transparent;
-    color: #aaa;
-    border-radius: 5px;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Andy Bold', sans-serif;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    padding: 0;
-}
-
-.close-modal:hover,
-.close-modal:focus {
-    color: white;
-    border-color: white;
-    text-decoration: none;
-}
-    
-    .CodeMirror {
-        font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
-    }
-   
-`;
-    document.head.appendChild(customStyle);
 
 // 创建模态窗口
     const modal = document.createElement('div');
@@ -208,6 +85,9 @@ document.addEventListener('DOMContentLoaded', function () {
         smartIndent: true,
         indentWithTabs: false,
         lineWrapping: true,
+        styleActiveLine: true,
+        matchBrackets: true,
+        autocloseBrackets: true,
         gutters: ["CodeMirror-linenumbers"],
         extraKeys: {
             "Tab": function (cm) {

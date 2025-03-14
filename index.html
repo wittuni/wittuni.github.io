@@ -92,7 +92,7 @@
             </div>
 
             <div class="code-editor-container">
-                <label for="python-code-editor"></label><textarea id="python-code-editor"></textarea>
+                <textarea id="python-code-editor"></textarea>
             </div>
 
             <div class="terminal-controls">
@@ -323,7 +323,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/python/python.min.js"></script>
 
-<script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/matchbrackets.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/edit/closebrackets.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/selection/active-line.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/search/searchcursor.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/search/match-highlighter.js"></script>-->
 
 <!--  Notes: >0.25.1 PythonError.message 为 undefined  -->
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>

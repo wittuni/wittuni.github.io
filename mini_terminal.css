@@ -1,0 +1,189 @@
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0);
+    transition: background-color 0.2s ease;
+}
+
+.modal.visible {
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #1E1E1E;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #444;
+    width: 80%;
+    height: 80%;
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    transform: scale(0.97);
+    transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.modal.visible .modal-content {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #fff;
+    text-align: center;
+}
+
+.modal-terminal {
+    flex: 1;
+    overflow: auto;
+    background-color: #1E1E1E;
+    color: #fff;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    padding: 10px;
+    box-sizing: border-box;
+    white-space: pre-wrap;
+    border: 1px solid #444;
+    scrollbar-width: thin;
+    scrollbar-color: #555 #1E1E1E;
+}
+
+/* 为Webkit浏览器定制滚动条样式 */
+.modal-terminal::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.modal-terminal::-webkit-scrollbar-track {
+    background: #2D2D2D;
+    border-radius: 4px;
+}
+
+.modal-terminal::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.modal-terminal::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+.modal-terminal::-webkit-scrollbar-corner {
+    background: #2D2D2D;
+}
+
+.close-modal {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid #aaa;
+    background-color: transparent;
+    color: #aaa;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Andy Bold', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 0;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: white;
+    border-color: white;
+    text-decoration: none;
+}
+
+.CodeMirror {
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace !important;
+}
+
+/* CodeMirror 滚动条样式 */
+.CodeMirror-scrollbar-filler, .CodeMirror-gutter-filler {
+    background-color: #3f3f3f;
+}
+
+/* 为 CodeMirror 定制滚动条样式 */
+.CodeMirror-simplescroll-horizontal div, .CodeMirror-simplescroll-vertical div {
+    background: #3f3f3f;
+    border-radius: 4px;
+}
+
+/* 为Webkit浏览器定制 CodeMirror 滚动条样式 */
+.CodeMirror ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.CodeMirror ::-webkit-scrollbar-track {
+    background: #3f3f3f;
+    border-radius: 4px;
+}
+
+.CodeMirror ::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+    transition: background 0.2s ease;
+}
+
+.CodeMirror ::-webkit-scrollbar-thumb:hover {
+    background: #777;
+}
+
+.CodeMirror ::-webkit-scrollbar-corner {
+    background: #3f3f3f;
+}
+
+/* 自定义光标样式 */
+.CodeMirror-cursor {
+    border-left: 2px solid #6ca0f5 !important;
+    border-right: none;
+    width: 0;
+}
+
+.CodeMirror-activeline-background {
+    background: #434343 !important;
+}
+
+/* 活动行的行号高亮 */
+.CodeMirror-activeline .CodeMirror-linenumber {
+    background-color: #434343 !important;
+    color: #dcdccc !important;
+}
+
+/* 行号区域样式 */
+.CodeMirror-gutters {
+    background: #2D2D2D !important;
+    border-right: none !important;
+    /*border-right: 2px solid #555 !important;*/
+}
+
+.CodeMirror-linenumber {
+    color: #9e9e9e !important;
+}
+
+
+
