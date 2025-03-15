@@ -6,6 +6,9 @@
     <title data-i18n="pageTitle">tttiw.github.io</title>
     <link rel="stylesheet" href="styles.css">
 
+    <link rel="preload" href="Andy Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="jnmyt.ttf" as="font" type="font/ttf" crossorigin>
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -35,7 +38,7 @@
 
             <!-- Accessibility Section -->
             <div class="accessibility-section">
-                <p class="center-text" data-i18n="customization"></p>
+                <h3 class="center-text" data-i18n="customization"></h3>
                 <div class="language-selector-wrapper">
                     <label>
                         <select id="language-selector"
@@ -83,7 +86,7 @@
         <!-- Python终端 -->
         <div class="card python-terminal-card card-wide">
             <h2 class="center-text" data-i18n="terminal.title"></h2>
-            <p>
+            <p class="reduced-margin-top">
                 <span class="code-inline independent-scrollable-code-inline"
                       data-i18n="terminal.description"></span>
             </p>
@@ -316,6 +319,26 @@
 
     </div>
 </div>
+
+
+<div class="blog-section">
+    <div class="container">
+        <div class="article-card blog-card">
+            <h2 class="center-text" data-i18n="blogs.title"></h2>
+            <div id="blog-list" class="blog-grid">
+                <div class="blog-loading">Loading...</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/blog-list.js"></script>
+
+
+
+
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 

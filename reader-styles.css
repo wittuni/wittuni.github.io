@@ -1,0 +1,188 @@
+:root {
+    --bg-primary: #0d1117;
+    --bg-secondary: #161b22;
+    --text-primary: #c9d1d9;
+    --text-secondary: #8b949e;
+    --border-color: #30363d;
+    --accent-color: #58a6ff;
+    --code-bg: #1f2428;
+    --container-width: 900px;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    margin: 0;
+    line-height: 1.6;
+
+
+}
+
+
+
+body.light-mode {
+    --bg-primary: #fdf6e3;    /* Solarized Light 背景色 */
+    --bg-secondary: #eee8d5;  /* Solarized Light 次要背景色 */
+    --text-primary: #586e75;  /* Solarized Light 主要文本色 */
+    --text-secondary: #657b83; /* Solarized Light 次要文本色 */
+    --border-color: #93a1a1;  /* Solarized Light 边框色 */
+    --code-bg: #FDF6E3;       /* 代码块背景色 */
+    --accent-color: #268bd2;  /* Solarized Light 蓝色 */
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: 50px;
+    background: var(--bg-secondary);
+    min-height: 100vh;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.article-card {
+    background: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.reader-header {
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 8px 16px;
+    /*background: var(--accent-color);*/
+    color: var(--accent-color);
+    margin-bottom: 20px;
+
+    background: transparent;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9em;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    width: fit-content;
+    font-family: inherit;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.back-button:hover {
+    opacity: 0.9;
+}
+
+.article-content {
+    line-height: 1.8;
+    font-size: 1.1em;
+}
+
+/* Markdown 样式 */
+.article-content h1,
+.article-content h2,
+.article-content h3 {
+    margin-top: 2em;
+    margin-bottom: 1em;
+    color: var(--text-primary);
+}
+
+.article-content p {
+    margin-bottom: 1.5em;
+    color: var(--text-secondary);
+}
+
+.article-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 2em auto;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.article-content code {
+    background: var(--code-bg);
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+    font-size: 0.9em;
+    color: var(--accent-color);
+}
+
+.article-content pre code {
+    display: block;
+    padding: 1em;
+    overflow-x: auto;
+    line-height: 1.45;
+    background: var(--code-bg);
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+}
+
+/* Mac风格按钮容器 */
+.mac-buttons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+/* Mac风格按钮基本样式 */
+.mac-button {
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border: none;
+    transition: all 0.2s ease;
+}
+
+/* 按钮颜色 */
+.mac-button.red {
+    background-color: #ff5f56;
+    border: 1px solid #e0443e;
+}
+
+.mac-button.yellow {
+    background-color: #ffbd2e;
+    border: 1px solid #dea123;
+}
+
+
+.mac-button.green {
+    background-color: #27c93f;
+    border: 1px solid #1aab29;
+}
+
+/*.mac-button.theme-toggle {*/
+/*    background: linear-gradient(135deg, #f8f8f8 50%, #0d1117 50%);*/
+/*    border: 1px solid var(--bg-secondary);*/
+/*    position: relative;*/
+/*    overflow: hidden;*/
+/*}*/
+
+
+/* 鼠标悬停效果 */
+.mac-button:hover {
+    opacity: 0.8;
+}
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
+
+/* 原有返回按钮样式可以移除 */
+/* .back-button { ... } */

@@ -59,5 +59,9 @@
   "download": "Download",
   "visit": "Visit",
   "unlimited_confetti": "Unlimited Confetti",
-  "dark_mode": "Midnight Mode"
+  "dark_mode": "Midnight Mode",
+  "blogs": {
+    "title":"Illusory Dept. @ tgio"
+  },
+  "return": "Return"
 }

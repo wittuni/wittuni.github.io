@@ -8,6 +8,122 @@
     src: url('jnmyt.ttf') format('truetype');
 }
 
+/* 博客列表区域 */
+.blog-section {
+    background-color: var(--bg-primary, #0d1117);
+    padding: 40px 0;
+    margin-top: 40px;
+    width: 100%;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    box-sizing: border-box;
+}
+
+.blog-section .container {
+    width: 85%;
+    margin: auto;
+    padding: 10px;
+}
+
+.blog-card {
+    background-color: var(--bg-secondary, #161b22);
+    color: var(--text-primary, #c9d1d9);
+    border: 1px solid var(--border-color, #30363d);
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.blog-item {
+    background: var(--bg-secondary, #161b22);
+    border: 1px solid var(--border-color, #30363d);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.blog-item-wrapper {
+    position: relative;  /* 为标签提供定位上下文 */
+    height: 100%;      /* 确保包含所有内容 */
+}
+
+.blog-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.blog-cover {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color, #30363d);
+}
+
+.blog-content {
+    padding: 25px 25px 50px;
+}
+
+.blog-title {
+    color: var(--accent-color, #58a6ff);
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 1.2em;
+}
+
+.blog-description {
+    color: var(--text-secondary, #8b949e);
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.blog-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8em;
+    color: var(--text-secondary, #8b949e);
+}
+
+.blog-tags-container {
+    position: absolute;    /* 使用绝对定位 */
+    bottom: 15px;         /* 距底部15px */
+    left: 15px;          /* 距左侧15px */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    z-index: 5;          /* 确保标签显示在上层 */
+}
+
+.blog-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    color: var(--accent-color, #58a6ff);
+    background: var(--bg-primary, #0d1117);
+    transition: all 0.2s ease;
+}
+
+.blog-loading {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary, #8b949e);
+}
+
+/* end of blog section */
+
+
 body {
     font-family: 'Andy Bold', 'JingNanMaiYuanTi', sans-serif;
     background-color: #4b2328;
@@ -132,19 +248,20 @@ body {
 /*    transform: None;*/
 /*}*/
 
-.accessibility-title {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin: 0 0 15px 0;
-    font-size: 16px;
-    color: #495057;
-    font-weight: 600;
-}
+/*.accessibility-title {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    text-align: center;*/
+/*    gap: 8px;*/
+/*    margin: 0 0 15px 0;*/
+/*    font-size: 16px;*/
+/*    color: #495057;*/
+/*    font-weight: 600;*/
+/*}*/
 
-.accessibility-icon {
-    fill: #495057;
-}
+/*.accessibility-icon {*/
+/*    fill: #495057;*/
+/*}*/
 
 .accessibility-section {
     display: flex;
@@ -161,6 +278,10 @@ body {
     /*margin-left: auto; !* 水平居中 *!*/
     /*margin-right: auto; !* 水平居中 *!*/
     box-sizing: border-box; /* 确保padding不会增加元素总宽度 */
+}
+
+.accessibility-section h3 {
+    margin-top: 0.5em;  /* 将默认的1em减半 */
 }
 
 .language-selector-wrapper {
@@ -832,6 +953,10 @@ input:checked + .setting-slider:before {
     flex-direction: column;
     gap: 12px;
     padding-bottom: 16px;
+}
+
+.reduced-margin-top {
+    margin-top: 0;
 }
 
 /* 终端显示区域样式 */
