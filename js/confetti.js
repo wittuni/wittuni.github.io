@@ -16,28 +16,28 @@ document.querySelector('.action-button').addEventListener('click', function () {
     const button = this;
 
     function frame() {
-        // 左侧发射点 - 移到屏幕外
+        // 左侧发射点
         confetti({
             particleCount: 7,
             angle: 60,
             spread: 55,
-            origin: {x: -0.1}, // 修改为负值，使起点在屏幕左侧外
+            origin: {x: -0.1}, // 使起点在屏幕左侧外
             y: 0,
-            gravity: 2.5,
+            gravity: 0.7,
             scalar: 0.7,
             drift: 0,
             ticks: 150,
             colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
         });
 
-        // 右侧发射点 - 移到屏幕外
+        // 右侧发射点
         confetti({
             particleCount: 7,
             angle: 120,
             spread: 55,
-            origin: {x: 1.1}, // 修改为大于1的值，使起点在屏幕右侧外
+            origin: {x: 1.1}, // 使起点在屏幕右侧外
             y: 0,
-            gravity: 2.5,
+            gravity: 0.7,
             scalar: 0.7,
             drift: 0,
             ticks: 150,
@@ -48,12 +48,12 @@ document.querySelector('.action-button').addEventListener('click', function () {
         confetti({
             particleCount: 10,
             angle: 90, // 垂直向下
-            spread: 60,
-            origin: { x: 0.5, y: -0.1 }, // y设为负值，表示在屏幕顶部以上
+            spread: 120,
+            origin: { x: 0.5, y: -0.1 }, // 在屏幕顶部以上
             gravity: 1.5, // 适当减小重力使彩纸下落更自然
             scalar: 0.7,
             drift: 0,
-            ticks: 150,
+            ticks: 200,
             colors: ['#E1306C', '#F56040', '#FCAF45', '#405DE6', '#5851DB'],
         });
 

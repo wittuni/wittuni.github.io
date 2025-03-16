@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="JavaScriptLibraryMappings">
-    <file url="PROJECT" libraries="{canvas-confetti, codemirror, default, highlight, highlight.js, html2pdf.js, katex, marked, marked-highlight, masonry-layout, mathjax, pyodide}" />
+    <file url="PROJECT" libraries="{bash, canvas-confetti, codemirror, default, highlight, highlight.js, html2pdf.js, katex, marked, marked-highlight, masonry-layout, mathjax, pyodide, shell}" />
   </component>
 </project>

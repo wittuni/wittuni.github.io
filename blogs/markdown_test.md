@@ -1,4 +1,4 @@
-# Markdown 语法展示与测试
+# Markdown Test
 
 这是一篇用于测试各种 Markdown 语法特性的博客文章。我们将展示 Markdown 中常用的各种格式化选项。
 
@@ -30,8 +30,6 @@
     * 青苹果
 * 香蕉
 * 橙子
-
-
 
 ### 有序列表
 1. 第一步
@@ -89,6 +87,10 @@ def fibonacci(n):
 ### 图片
 ![示例图片](https://picsum.photos/800/400)
 
+| ![示例图片](https://picsum.photos/800/400) |
+|:--:|
+| Beautiful sunset over the ocean |
+
 ## 7. 数学公式
 
 当 $a \ne 0$ 时，方程 $ax^2 + bx + c = 0$ 有两个解：
@@ -142,4 +144,4 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
 
 ---
 
-*最后更新于：2024年3月20日*
+*最后更新于：2024年3月*

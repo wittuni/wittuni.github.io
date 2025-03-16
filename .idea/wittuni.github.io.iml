@@ -20,5 +20,7 @@
     <orderEntry type="library" name="marked-highlight" level="application" />
     <orderEntry type="library" name="katex" level="application" />
     <orderEntry type="library" name="html2pdf.js" level="application" />
+    <orderEntry type="library" name="bash" level="application" />
+    <orderEntry type="library" name="shell" level="application" />
   </component>
 </module>

@@ -8,7 +8,7 @@
     src: url('jnmyt.ttf') format('truetype');
 }
 
-/* 博客列表区域 */
+/* Blog section */
 .blog-section {
     background-color: var(--bg-primary, #0d1117);
     padding: 40px 0;
@@ -40,9 +40,23 @@
     margin-top: 20px;
 }
 
+@media (max-width: 480px) {
+    .blog-grid {
+        grid-template-columns: 1fr;  /* 在非常小的屏幕上改为单列 */
+    }
+
+    .blog-content {
+        /*padding: 20px 15px 50px;  !* 减少内边距以适应小屏幕 *!*/
+    }
+
+    .blog-section .container {
+        /*width: 95%;  !* 在小屏幕上增加容器宽度利用更多空间 *!*/
+    }
+}
+
 .blog-item {
     background: var(--bg-secondary, #161b22);
-    border: 1px solid var(--border-color, #30363d);
+    border: 2px solid var(--border-color, #30363d);
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -54,8 +68,7 @@
 }
 
 .blog-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: #c9d1d9;
 }
 
 .blog-cover {
@@ -139,6 +152,8 @@ body {
     width: auto;
     max-width: 100%;
     box-sizing: border-box; /* 确保padding和border不会增加总宽度 */
+    /*filter: blur(1px);*/
+    /*transition: filter 0.3s ease;*/
 }
 
 @media (max-width: 767px) {
@@ -159,6 +174,29 @@ body {
 
 .main-title-text {
     text-align: center;
+    color: #e0e0e0;
+}
+
+.dept-btn {
+    display: inline-block;
+    padding: 6px 14px;
+    background: transparent;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9em;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    font-family: inherit;
+    overflow: hidden;
+    z-index: 1;
+
+    transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+    position: absolute;
+    left: 20px;         /* 与父元素的左内边距对齐 */
+    right: 20px;
+    width: calc(100% - 40px); /* 减去左右各20px的内边距 */
+    bottom: 15px;
+    border: 2px solid #e0e0e0;
     color: #e0e0e0;
 }
 
@@ -196,6 +234,8 @@ body {
 
 .theme-card {
     background-color: #4a1913;
+    /*filter: blur(1px);*/
+    /*transition: filter 0.3s ease;*/
 }
 
 .card:hover {
@@ -329,11 +369,12 @@ body {
 
 .action-button {
     background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    /*background: linear-gradient(135deg, #E1306C, #F56040, #FCAF45, #5851DB, #405DE6);*/
     color: white;
     border: none;
     border-radius: 12px;
     padding: 12px 22px;
-    cursor: pointer;
+    /*cursor: pointer;*/
     font-size: 0.9em;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
@@ -342,7 +383,11 @@ body {
     /* 靠右 */
     /*margin-left: auto;*/
     /*display: block;*/
-    width: 100%;
+    left: 20px;         /* 与父元素的左内边距对齐 */
+    right: 20px;
+    width: calc(100% - 40px); /* 减去左右各20px的内边距 */
+    position: absolute;
+    bottom: 15px;        /* 固定在底部 */
 }
 
 .action-button:active {
@@ -631,11 +676,13 @@ body {
 
 .code-inline::-webkit-scrollbar-thumb {
     background: linear-gradient(135deg, rgba(75, 0, 130, 0.25), rgba(65, 105, 225, 0.25));
+    /*background: rgba(75, 35, 40, 0.7);*/
     border-radius: 3px;
     border: 1px solid #f1f1f1; /* 与轨道衔接视觉过渡 */
 }
 
 .code-inline::-webkit-scrollbar-thumb:hover {
+    /*background: rgba(75, 35, 40, 0.8);*/
     background: linear-gradient(135deg, rgba(75, 0, 130, 0.35), rgba(65, 105, 225, 0.35)); /* 悬停时颜色 */
 }
 
@@ -646,12 +693,14 @@ body.dark-mode .code-inline::-webkit-scrollbar-track {
 }
 
 body.dark-mode .code-inline::-webkit-scrollbar-thumb {
+    /*background: rgba(51, 51, 51, 0.9);*/
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.5), rgba(255, 165, 0, 0.5));
     border-radius: 3px;
     border: 1px solid #292929; /* 与轨道衔接视觉过渡 */
 }
 
 body.dark-mode .code-inline::-webkit-scrollbar-thumb:hover {
+    /*background: rgba(51, 51, 51, 0.8);*/
     background: linear-gradient(135deg, rgba(255, 215, 0, 0.4), rgba(255, 165, 0, 0.4));
 }
 

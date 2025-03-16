@@ -12,7 +12,6 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
 
     <meta name="theme-color" content="#4b2328"/>
 
@@ -28,6 +27,10 @@
                 <img src="images/tgio_s.png" alt="Site icon" class="site-icon">
             </div>
             <h2 class="main-title-text" data-i18n="title"></h2>
+            <button id="dept-btn" class="dept-btn"
+                    onclick="document.getElementById('blog-section').scrollIntoView({behavior: 'smooth', block: 'start'})">
+                <span>To the Dept.</span>
+            </button>
         </div>
 
 
@@ -321,7 +324,7 @@
 </div>
 
 
-<div class="blog-section">
+<div id="blog-section" class="blog-section">
     <div class="container">
         <div class="article-card blog-card">
             <h2 class="center-text" data-i18n="blogs.title"></h2>
