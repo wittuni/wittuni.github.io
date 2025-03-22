@@ -9,8 +9,8 @@
     "description": "极简计算器。支持 sympy 和 LaTeX 句法。"
   },
   "update": {
-    "title": "Upcoming Updates",
-    "description": "// todo"
+    "title": "更新计划",
+    "description": "(1) wCalc"
   },
   "game": {
     "title": "一款 RPG",

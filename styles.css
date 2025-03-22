@@ -326,7 +326,7 @@ body {
     font-size: 16px;
     border: 2px solid #000;
     border-radius: 8px;
-    background-color: white;
+    background: transparent;
     color: #212529;
     cursor: pointer;
     padding: 12px 12px 12px 12px;
@@ -336,7 +336,6 @@ body {
     text-align: center; /* 以防文本内容多行 */
     /*transition: all 0.3s ease;*/
 }
-
 
 /* 聚焦效果 - 移除边框加粗 */
 .language-selector:focus {
@@ -715,9 +714,9 @@ body.dark-mode .code-inline::-webkit-scrollbar-thumb:hover {
     -webkit-appearance: none;
 }
 
-.minimalism-button:active {
-    top: 0;
-}
+/*.minimalism-button:active {*/
+/*    top: 0;*/
+/*}*/
 
 .minimalism-button:hover {
     background-color: rgba(0, 0, 0, 0.03);
@@ -1098,7 +1097,7 @@ body.dark-mode .card {
 }
 
 body.dark-mode .language-selector {
-    background-color: #463730;
+    /*background-color: #463730;*/
     color: #F1E4D7;
     border: 2px solid #A47C64;
 }
