@@ -18,144 +18,80 @@
 </head>
 
 <body>
+
 <div class="container">
 
     <div class="card-grid">
 
-        <div class="card theme-card">
-            <div class="site-icon-container">
-                <img src="images/tgio_s.png" alt="Site icon" class="site-icon">
-            </div>
-            <h2 class="main-title-text" data-i18n="title"></h2>
-            <button id="dept-btn" class="dept-btn"
-                    onclick="document.getElementById('blog-section').scrollIntoView({behavior: 'smooth', block: 'start'})">
-                <span>To the Dept.</span>
-            </button>
-        </div>
+        <div class="card card-full toolbar">
+            <div class="card-header">
 
+                <div class="header-left">
+                    <div class="color-theme-selector">
+                        <button class="color-button color-button-red"
+                                id="confetti-button"></button>
+                        <button class="color-button color-button-yellow"
+                                onclick="document.getElementById('blog-title')
+                                .scrollIntoView({ behavior: 'smooth', block: 'center' })"></button>
+                        <button class="color-button color-button-green"
+                                onclick="toggleFullscreen(); return false;"></button>
+                    </div>
 
-        <div class="card">
+                    <div class="switch-wrapper">
+                        <div class="switch theme-switch">
+                            <input type="checkbox" id="theme-toggle">
+                            <label class="slider" for="theme-toggle">
+                                <span class="star star1"></span>
+                                <span class="star star2"></span>
+                                <span class="star star3"></span>
+                                <span class="star star4"></span>
+                                <span class="star star5"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
 
-            <h2 class="center-text" data-i18n="settings"></h2>
-            <p class="center-text" data-i18n="mainText"></p>
+                <h2 class="header-title-desktop center-text" data-i18n="title"></h2>
 
-            <!-- Accessibility Section -->
-            <div class="accessibility-section">
-                <h3 class="center-text" data-i18n="customization"></h3>
-                <div class="language-selector-wrapper">
+                <div class="header-right">
                     <label>
-                        <select id="language-selector"
-                                class="language-selector">
+                        <select id="language-selector" class="language-selector">
                             <option value="en" data-i18n="languages.english">English</option>
-                            <option value="zh" data-i18n="languages.chinese">现代汉语</option>
+                            <option value="zh" data-i18n="languages.chinese">中文</option>
                         </select>
                     </label>
-                    <div class="select-arrow"></div>
-                </div>
-
-                <!-- 颜色选择器 -->
-                <div class="color-theme-selector">
-                    <button class="color-button color-button-red" data-color="#4b2328"></button>
-                    <button class="color-button color-button-yellow" data-color="#a86800"></button>
-                    <button class="color-button color-button-green" data-color="#395a57"></button>
-                    <button class="color-button color-button-lavender" data-color="#4e4466"></button>
-                    <button class="color-button color-button-dark" data-color="#1a1a1a"></button>
-                </div>
-
-                <!-- 夜间模式开关 -->
-                <div class="theme-switch-wrapper">
-                    <div class="theme-switch">
-                        <input type="checkbox" id="theme-toggle">
-                        <label class="slider" for="theme-toggle">
-                            <span class="star star1"></span>
-                            <span class="star star2"></span>
-                            <span class="star star3"></span>
-                            <span class="star star4"></span>
-                            <span class="star star5"></span>
-                        </label>
-                    </div>
-                    <span class="theme-label" data-i18n="dark_mode"></span>
                 </div>
 
             </div>
 
-            <button
-                    type="button"
-                    class="action-button"
-                    data-i18n="confetti">
-            </button>
+            <h2 class="header-title-mobile center-text" data-i18n="title"></h2>
+
         </div>
-
-        <!-- Python终端 -->
-        <div class="card python-terminal-card card-wide">
-            <h2 class="center-text" data-i18n="terminal.title"></h2>
-            <p class="reduced-margin-top">
-                <span class="code-inline independent-scrollable-code-inline"
-                      data-i18n="terminal.description"></span>
-            </p>
-            <div class="terminal-container">
-                <div id="python-terminal" class="python-terminal"></div>
-            </div>
-
-            <div class="code-editor-container">
-                <textarea id="python-code-editor"></textarea>
-            </div>
-
-            <div class="terminal-controls">
-
-                <button id="run-code-btn" class="minimalism-button run-btn">
-                    <span data-i18n="terminal.execute"></span>
-                </button>
-
-                <button id="clear-terminal-btn"
-                        class="minimalism-button clear-btn"
-                        require-confirmation="true"
-                >
-                    <span data-i18n="terminal.clear"></span>
-                </button>
-
-                <button id="reset-env-btn"
-                        class="minimalism-button reset-btn"
-                        require-confirmation="true"
-                >
-                    <span data-i18n="terminal.reset"></span>
-                </button>
-
-                <button id="maximize-terminal-btn" class="minimalism-button">
-                    <span data-i18n="terminal.maximize"></span>
-                </button>
-
-            </div>
-
-            <div class="tags-container">
-                <span class="tag tag-purple">Pyodide</span>
-                <span class="tag tag-purple">CodeMirror</span>
-                <span class="tag tag-blue">Beta</span>
-            </div>
-        </div>
-
-
         <div class="card">
             <!--      <div class="glass-image-container">-->
             <!--        <img src="images/witt-s-calculator.jpg" class="card-image">-->
             <!--        <div class="glass-overlay"></div>-->
             <!--      </div>-->
-            <div class="glass-image-container-gradient-bg">
+            <div class="glass-image-container gradient-blue-gray">
             </div>
             <h3 data-i18n="weixin.title"></h3>
             <p data-i18n="weixin.description"></p>
-
-            <button class="minimalism-button initial-state"
-                    data-target-url="https://mp.weixin.qq.com/s/b6wxfJ-ndgf0hpJa0fnrGQ"
-                    require-confirmation="true"
-            >
-                <span data-i18n="visit"></span>
-            </button>
 
             <div class="tags-container">
                 <span class="tag tag-grey">Personal Project</span>
             </div>
 
+        </div>
+
+        <div class="card">
+            <div class="glass-image-container gradient-yellow-pink">
+            </div>
+            <h3 data-i18n="game.title"></h3>
+            <p data-i18n="game.description"></p>
+            <div class="tags-container">
+                <span class="tag tag-yellow">C#</span>
+                <span class="tag tag-grey">TBA</span>
+            </div>
         </div>
 
 
@@ -166,16 +102,18 @@
             <div class="glass-overlay"></div>
             <!-- 底部白色信息卡 -->
             <div class="info-box">
-                <h3 data-i18n="ws_calc.title"></h3>
-                <p data-i18n="ws_calc.description"></p>
+                <h3 data-i18n="w_calculator.title"></h3>
+                <p data-i18n="w_calculator.description"></p>
 
-                <button class="minimalism-button initial-state"
-                        data-target-url="https://github.com/tttiw/witt-s-calculator/releases/tag/Beta-1.0"
-                        require-confirmation="true"
-                >
-                    <span data-i18n="download"></span>
-                </button>
+                <div class="buttons-container">
 
+                    <button class="minimalism-button initial-state"
+                            data-target-url="https://github.com/tttiw/witt-s-calculator/releases/tag/Beta-1.0"
+                    >
+                        <span data-i18n="download"></span>
+                    </button>
+
+                </div>
                 <div class="tags-container">
                     <span class="tag tag-green">Python</span>
                     <span class="tag tag-red">Apache 2.0</span>
@@ -186,23 +124,13 @@
         </div>
 
         <div class="card">
-            <h3 data-i18n="ws_calc_uu.title"></h3>
+            <h3 data-i18n="w_calculator.update_title"></h3>
             <p>
                 <span class="code-inline independent-code-inline"
-                      data-i18n="ws_calc_uu.description"></span>
+                      data-i18n="w_calculator.update_description"></span>
             </p>
         </div>
 
-        <div class="card">
-            <div class="glass-image-container-gradient-yp">
-            </div>
-            <h3 data-i18n="game.title"></h3>
-            <p data-i18n="game.description"></p>
-            <div class="tags-container">
-                <span class="tag tag-yellow">C#</span>
-                <span class="tag tag-grey">TBA</span>
-            </div>
-        </div>
 
         <div class="card card-wide">
             <h2 class="center-text" data-i18n="about_me.title"></h2>
@@ -211,8 +139,6 @@
                 <img src="images/Cute_Fishron_Mount.webp" alt="cute fishron">
                 <img src="images/Cute_Fishron_Mount.webp" class="mirror-flip" alt="cute fishron">
             </div>
-
-<!--            <div style="clear: both;"></div>-->
 
             <p class="center-text" data-i18n="about_me.description"></p>
             <table class="themed-table">
@@ -250,55 +176,81 @@
             </table>
         </div>
 
+        <div class="card python-terminal-card card-wide">
+            <h2 class="center-text" data-i18n="terminal.title"></h2>
+            <p class="reduced-margin-top">
+                <span class="code-inline independent-code-inline scrollable"
+                      data-i18n="terminal.description"></span>
+            </p>
+            <div class="terminal-container">
+                <div id="python-terminal" class="python-terminal"></div>
+            </div>
+
+            <div class="code-editor-container">
+                <textarea id="python-code-editor"></textarea>
+            </div>
+
+            <div class="terminal-controls">
+
+                <button id="run-code-btn" class="minimalism-button">
+                    <span data-i18n="terminal.execute"></span>
+                </button>
+
+                <button id="maximize-terminal-btn" class="minimalism-button">
+                    <span data-i18n="terminal.maximize"></span>
+                </button>
+
+                <button id="clear-terminal-btn"
+                        class="minimalism-button clear-btn"
+                        require-confirmation="true"
+                >
+                    <span data-i18n="terminal.clear"></span>
+                </button>
+
+                <button id="reset-env-btn"
+                        class="minimalism-button clear-btn"
+                        require-confirmation="true"
+                >
+                    <span data-i18n="terminal.reset"></span>
+                </button>
+
+
+            </div>
+
+            <div class="tags-container">
+                <span class="tag tag-purple">Pyodide</span>
+                <span class="tag tag-purple">CodeMirror</span>
+                <span class="tag tag-blue">Beta</span>
+            </div>
+        </div>
+
         <div class="card">
             <h2 data-i18n="links.title"></h2>
-            <p><span class="code-inline">placeholder@placeholder.org</span><span class="code-inline">placeholderplaceholderplaceholderplaceholderplaceholderplaceholder@placeholder.org</span>
-            </p>
-            <div class="modern-divider"></div>
 
             <div class="buttons-container">
 
                 <button class="minimalism-button initial-state"
                         data-target-url="https://zeyi2.github.io"
-                        require-confirmation="true"
                 >
                     <span>Mitchell's Homepage</span>
                 </button>
 
-                <button class="minimalism-button initial-state"
-                        data-target-url="https://example.com/"
-                        require-confirmation="true"
-                >
-                    <span>Placeholder 1</span>
-                </button>
-
-                <button class="minimalism-button initial-state"
-                        data-target-url="https://example.com/"
-                        require-confirmation="true"
-                >
-                    <span>PH2</span>
-                </button>
 
                 <button class="minimalism-button initial-state"
                         data-target-url="original_website.html"
-                        require-confirmation="true"
                 >
                     <span>???</span>
                 </button>
 
+                <button class="minimalism-button initial-state"
+                        data-target-url="https://github.com/tttiw/tttiw.github.io/issues"
+                        require-confirmation="true"
+                >
+                    <span data-i18n="issues.title"></span>
+                </button>
+
             </div>
 
-        </div>
-
-        <div class="card">
-            <h2 data-i18n="issues.title"></h2>
-            <p data-i18n="issues.description"></p>
-            <button class="minimalism-button initial-state"
-                    data-target-url="https://github.com/tttiw/tttiw.github.io/issues"
-                    require-confirmation="true"
-            >
-                <span data-i18n="issues.redirect"></span>
-            </button>
         </div>
 
         <div class="card">
@@ -308,13 +260,17 @@
                       data-i18n="credits.description"
                 ></span>
             </p>
-            <div class="modern-divider"></div>
-            <div class="setting-switch-container">
-                <label class="setting-switch-label" data-i18n="unlimited_confetti"></label>
-                <label class="setting-switch">
+
+            <div class="switch-wrapper">
+
+                <label class="switch">
                     <input type="checkbox" id="cooldown-toggle">
-                    <span class="setting-slider"></span>
+                    <span class="slider"></span>
                 </label>
+
+                <label class="switch-label" data-i18n="unlimited_confetti"></label>
+
+
             </div>
 
 
@@ -327,7 +283,7 @@
 <div id="blog-section" class="blog-section">
     <div class="container">
         <div class="article-card blog-card">
-            <h2 class="center-text" data-i18n="blogs.title"></h2>
+            <h2 id="blog-title" class="center-text" data-i18n="blogs.title"></h2>
             <div id="blog-list" class="blog-grid">
                 <div class="blog-loading">Loading...</div>
             </div>
@@ -336,11 +292,6 @@
 </div>
 
 <script src="js/blog-list.js"></script>
-
-
-
-
-
 
 
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
@@ -359,13 +310,14 @@
 <!--  Notes: >0.25.1 PythonError.message 为 undefined  -->
 <script src="https://cdn.jsdelivr.net/pyodide/v0.25.1/full/pyodide.js"></script>
 
-<script src="js/theme-customization.js"></script>
+<!--<script src="js/theme-customization.js"></script>-->
 <script src="js/button-confirmation-effect.js"></script>
 <script src="js/button-navigation.js"></script>
 <script src="js/confetti.js"></script>
 <script src="js/python-terminal.js"></script>
 <script src="js/i18n.js"></script>
 <script src="js/dark-mode.js"></script>
+<script src="js/toggle-fullscreen.js"></script>
 
 </body>
 

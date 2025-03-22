@@ -2,15 +2,13 @@
   "title": "tttiw.github.io",
   "weixin": {
     "title": "Illusory Dept.",
-    "description": "My Weixin official account, a personal project. Meet me at the bottom of this webpage :)"
+    "description": "My personal project. Find it on the bottom of this webpage, and consider subscribing to my Weixin official account with the same name."
   },
-  "ws_calc": {
+  "w_calculator": {
     "title": "witt's Calculator (Beta)",
-    "description": "A minimalism calculator that supports sympy and LaTeX syntax."
-  },
-  "ws_calc_uu": {
-    "title": "witt's Calculator - Upcoming Updates",
-    "description": "- Beta 2.0 \n  - Custom UI schemes and localizations\n  - De-experiment LaTeX mode\n  - Truth table (By Mitchell Xu) integration\n\n- Beta 3.0\n  - Highlighting\n  - Typeset display"
+    "description": "A minimalism calculator that supports sympy and LaTeX syntax.",
+    "update_title": "witt's Calculator - Upcoming Updates",
+    "update_description": "- Beta 2.0 \n  - Custom UI schemes and localizations\n  - De-experiment LaTeX mode\n  - Truth table (By Mitchell Xu) integration\n\n- Beta 3.0\n  - Highlighting\n  - Typeset display"
   },
   "game": {
     "title": "A RPG",
@@ -25,7 +23,7 @@
       "l2r1": "Hobby",
       "l2r2": "Daydreaming",
       "l3r1": "Game",
-      "l3r2": "Minecraft or Terraria (vanilla)",
+      "l3r2": "Vanilla Minecraft (+Sodium) or Terraria",
       "l4r1": "Album",
       "l4r2": "Underwater by Ludovico Einaudi",
       "l5r1": "Quote",
@@ -33,11 +31,11 @@
     }
   },
   "links": {
-    "title": "Friendly Links"
+    "title": "Links"
   },
   "credits": {
     "title": "Credits",
-    "description": "Made by tttiw.\nThe website's icon was made by 3s.\n====================\nLast edit: 2025/3\nv10.1\nBlog Test 3"
+    "description": "Made by tttiw.\nThe website's icon was made by 3s.\n\nLast edit: 2025/3\n11.0"
   },
   "issues": {
     "title": "Report Issues",
@@ -60,6 +58,6 @@
   "unlimited_confetti": "Unlimited Confetti",
   "dark_mode": "\"Midnights\"",
   "blogs": {
-    "title":"Illusory Dept."
+    "title": "Illusory Dept."
   }
 }

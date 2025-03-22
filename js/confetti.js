@@ -4,7 +4,7 @@ document.getElementById('cooldown-toggle').addEventListener('change', function (
     cooldownEnabled = !this.checked; // 选中表示关闭冷却
 });
 
-document.querySelector('.action-button').addEventListener('click', function () {
+document.getElementById('confetti-button').addEventListener('click', function () {
     if (cooldownEnabled) {
         if (this.disabled) return;
         this.disabled = true;

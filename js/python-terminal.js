@@ -155,9 +155,9 @@ document.addEventListener('DOMContentLoaded', function () {
         const lineCount = codeLines.length;
 
         if (lineCount === 1) {
-            appendToTerminal(`>>> ${codeLines[0]}`, 'terminal-input');
+            appendToTerminal(`> ${codeLines[0]}`, 'terminal-input');
         } else {
-            appendToTerminal(`>>> [${lineCount} lines of Python code executed]`, 'terminal-input');
+            appendToTerminal(`> [${lineCount} lines of Python code executed]`, 'terminal-input');
         }
 
         // 确保Pyodide已加载
