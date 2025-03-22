@@ -188,18 +188,18 @@ body.light-mode {
 
 .reader-button.red {
     background-color: #ff5f56;
-    border: 1px solid #e0443e;
+    /*border: 1px solid #e0443e;*/
 }
 
 .reader-button.yellow {
     background-color: #ffbd2e;
-    border: 1px solid #dea123;
+    /*border: 1px solid #dea123;*/
 }
 
 
 .reader-button.green {
     background-color: #27c93f;
-    border: 1px solid #1aab29;
+    /*border: 1px solid #1aab29;*/
 }
 
 /*.mac-button.theme-toggle {*/
