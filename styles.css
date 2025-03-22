@@ -557,7 +557,6 @@ body {
 
 .code-inline::-webkit-scrollbar-thumb {
     background: rgb(26, 26, 26, 0.8);
-    border: transparent;
 }
 
 .code-inline::-webkit-scrollbar-thumb:hover {
@@ -714,6 +713,10 @@ body.dark-mode .code-inline::-webkit-scrollbar-thumb:hover {
     transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
     -webkit-tap-highlight-color: transparent;
     -webkit-appearance: none;
+}
+
+.minimalism-button:active {
+    top: 0;
 }
 
 .minimalism-button:hover {

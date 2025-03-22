@@ -6,9 +6,11 @@
   },
   "w_calculator": {
     "title": "witt's Calculator (Beta)",
-    "description": "A minimalism calculator that supports sympy and LaTeX syntax.",
-    "update_title": "witt's Calculator - Upcoming Updates",
-    "update_description": "- Beta 2.0 \n  - Custom UI schemes and localizations\n  - De-experiment LaTeX mode\n  - Truth table (By Mitchell Xu) integration\n\n- Beta 3.0\n  - Highlighting\n  - Typeset display"
+    "description": "A minimalism calculator that supports sympy and LaTeX syntax."
+  },
+  "update": {
+    "title": "Upcoming Updates",
+    "description": "// todo"
   },
   "game": {
     "title": "A RPG",

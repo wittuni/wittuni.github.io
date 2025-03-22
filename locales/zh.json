@@ -6,12 +6,14 @@
   },
   "w_calculator": {
     "title": "witt's Calculator (Beta)",
-    "description": "极简计算器。支持 sympy 和 LaTeX 句法。",
-    "update_title": "更新计划：witt's Calculator",
-    "update_description": "- Beta 2.0 \n  - Custom UI schemes and localizations\n  - De-experiment LaTeX mode\n  - Truth table (By Mitchell Xu) integration\n\n- Beta 3.0\n  - Highlighting\n  - Typeset display"
+    "description": "极简计算器。支持 sympy 和 LaTeX 句法。"
+  },
+  "update": {
+    "title": "Upcoming Updates",
+    "description": "// todo"
   },
   "game": {
-    "title": "一款RPG",
+    "title": "一款 RPG",
     "description": "我的秘密项目。"
   },
   "about_me":{
